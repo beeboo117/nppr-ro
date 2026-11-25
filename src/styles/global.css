@@ -1,4 +1,4 @@
-/* NPPR · Ro's Style — design tokens */
+/* Primary Care Practice Resource — design tokens */
 :root {
   --bg: #f6f7fb;
   --bg-2: #eef0f7;
@@ -357,3 +357,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .region-box details.ess { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 10px; }
 .region-box details.ess > summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--accent); }
 .region-box details.ess[open] > summary { margin-bottom: 4px; }
+
+.brand-short { display: none; }
+@media (max-width: 1500px) { .brand small { display: none; } }
+@media (max-width: 560px) { .brand-long { display: none; } .brand-short { display: inline; } }

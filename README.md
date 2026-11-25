@@ -1,6 +1,6 @@
-# NPPR · Ro
+# Primary Care Practice Resource
 
-RoPro's redesigned, interactive edition of the [NP Practice Resource (NPPR.ca)](https://www.nppr.ca).
+RoPro's interactive index of current primary care guidelines for NPs, MDs and DOs, built on the [NP Practice Resource (NPPR.ca)](https://www.nppr.ca). The name is set in `src/lib/brand.ts`.
 
 **Live site:** https://beeboo117.github.io/nppr-ro/
 

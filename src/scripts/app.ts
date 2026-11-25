@@ -1,4 +1,4 @@
-// Client-side behaviour for NPPR · Ro. Runs on every page load, including
+// Client-side behaviour for the Primary Care Practice Resource. Runs on every page load, including
 // Astro view-transition navigations (astro:page-load).
 import Fuse from 'fuse.js';
 
@@ -424,7 +424,7 @@ async function wikiSummary(terms: string[]) {
 function funLinks(q: string): { icon: string; title: string; sub: string; url: string }[] {
   const e = encodeURIComponent(q);
   return [
-    { icon: '🎥', title: 'Video explainers', sub: 'YouTube', url: `https://www.youtube.com/results?search_query=${e}+explained+nurse+practitioner` },
+    { icon: '🎥', title: 'Video explainers', sub: 'YouTube', url: `https://www.youtube.com/results?search_query=${e}+explained+primary+care` },
     { icon: '🎧', title: 'Podcast episodes', sub: 'Apple Podcasts', url: `https://podcasts.apple.com/search?term=${e}` },
     { icon: '🃏', title: 'Flashcards and quizzes', sub: 'Quizlet', url: `https://quizlet.com/search?query=${e}&type=sets` },
     { icon: '🩺', title: 'Clinical skills guides', sub: 'Geeky Medics', url: `https://geekymedics.com/?s=${e}` },
