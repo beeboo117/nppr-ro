@@ -447,6 +447,12 @@ function applyRegionOverlays(pages: Page[]) {
     if (!row) { console.warn(`[alberta] pathway not found in upstream sheet: "${m.pathway}"`); continue; }
     const list = byPage.get(m.page) || []; list.push(row); byPage.set(m.page, list);
   }
+  const topicRows = new Map<string, any[]>();
+  for (const t of readCsv(join(dataDir, 'topics.csv'))) {
+    const list = topicRows.get(t.page) || [];
+    list.push({ title: t.title, url: t.url, pdf: '', year: yearOf(t.year), region: 'AB', links: '', note: t.note + (t.checked ? '' : ' (this site blocks link checks; link taken from the AMA guidelines page)') });
+    topicRows.set(t.page, list);
+  }
   const ess = readCsv(join(dataDir, 'essentials.csv'));
   const groups = [...new Set(ess.map(e => e.group))];
   const essHtml = groups.map(g => `<div class="sub-sec"><h3>${esc(g)}</h3><ul class="items">${ess.filter(e => e.group === g).map(e =>
@@ -455,17 +461,20 @@ function applyRegionOverlays(pages: Page[]) {
   for (const p of pages) {
     if (p.isIndex || !OVERLAY_SECTIONS.has(p.section)) continue;
     const pw = byPage.get(p.id) || [];
+    const tr = topicRows.get(p.id) || [];
     const hasSheet = p.html.includes('class="sheet-sec');
-    if (!hasSheet && !pw.length) continue;
+    if (!hasSheet && !pw.length && !tr.length) continue;
     const pwHtml = pw.length ? `<div class="sub-sec"><h3>Alberta pathways for this topic</h3><ul class="items">${pw.map(r => `<li class="item" data-region="AB">${renderLine(r, md, {})}</li>`).join('')}</ul></div>` : '';
+    const trHtml = tr.length ? `<div class="sub-sec"><h3>Alberta guidelines and resources</h3><ul class="items">${tr.map(r => `<li class="item" data-region="AB">${renderLine(r, md, {})}</li>`).join('')}</ul></div>` : '';
+    const n = pw.length + tr.length;
     const box = `<section class="sheet-sec region-box" id="alberta" data-only="yes" data-region="AB">
-<h2><span>🏔️ Alberta</span>${pw.length ? `<span class="count">${pw.length}</span>` : ''}</h2>
-${pwHtml}
-<details class="ess"${pw.length ? '' : ' open'}><summary>Alberta essentials: advice, referral and prescribing</summary>${essHtml}</details>
+<h2><span>🏔️ Alberta</span>${n ? `<span class="count">${n}</span>` : ''}</h2>
+${pwHtml}${trHtml}
+<details class="ess"${n ? '' : ' open'}><summary>Alberta essentials: advice, referral and prescribing</summary>${essHtml}</details>
 </section>`;
     const i = p.html.indexOf('<section class="sheet-sec');
     p.html = i >= 0 ? p.html.slice(0, i) + box + p.html.slice(i) : box + p.html;
-    p.headings.unshift({ id: 'alberta', text: '🏔️ Alberta', level: 2, count: pw.length, region: 'AB' });
+    p.headings.unshift({ id: 'alberta', text: '🏔️ Alberta', level: 2, count: n, region: 'AB' });
   }
 }
 
