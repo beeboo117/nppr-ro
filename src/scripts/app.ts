@@ -188,6 +188,12 @@ function initPageFilter() {
       const subHit = terms.length && $$('.sub', box).some(s => { const t = (s.dataset.text || '') + ' ' + s.textContent!.toLowerCase(); return terms.every(x => t.includes(x)); });
       if (subHit) { delete box.dataset.hidden; ($('details', box) as HTMLDetailsElement).open = true; }
     }
+    // Drug-class tiles open when they hold a match.
+    for (const tile of $$('.prose details.rx-tile')) {
+      const hit = terms.length > 0 && $$('.item', tile).some(x => !x.dataset.hidden);
+      (tile as HTMLDetailsElement).open = hit;
+      (tile as HTMLElement).style.display = !terms.length || hit || terms.every(t => tile.textContent!.toLowerCase().includes(t)) ? '' : 'none';
+    }
     for (const sec of $$('.prose .sheet-sec')) {
       const visible = $$('.item, .md-row, .sheet-note', sec).some(x => !x.dataset.hidden);
       sec.style.display = !terms.length || visible ? '' : 'none';

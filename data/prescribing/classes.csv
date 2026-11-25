@@ -1,0 +1,51 @@
+system,class,examples,match,refs
+cardiovascular,Antihypertensives,"ACE inhibitors, ARBs, thiazides, CCBs, beta-blockers",hypertension|antihypertensive|ace inhibitor|\barb\b,bc-gpac-htn-drugs;hypertension-canada-guidelines;rxfiles-charts
+cardiovascular,Lipid-lowering,"statins, ezetimibe, PCSK9 inhibitors",statin|lipid|dyslipid|cholesterol,bc-gpac-cvd-statin-table;ccs-dyslipidemia-2021;rxfiles-lipids;rxfiles-statin-intolerance;cfp-statin-deprescribing-2026
+cardiovascular,Anticoagulants,"apixaban, rivaroxaban, edoxaban, dabigatran, warfarin",anticoag|doac|warfarin|apixaban|rivaroxaban,thrombosis-canada-doac-comparison;thrombosis-canada-warfarin;bc-gpac-afib-drug-tables;rxfiles-af-anticoagulation;bc-gpac-doac-switching
+cardiovascular,Antiplatelets,"ASA, clopidogrel, ticagrelor",antiplatelet|clopidogrel|ticagrelor|\basa\b|dual antiplatelet,rxfiles-dapt-chart;thrombosis-canada-oac-antiplatelet;ccs-post-acs-pathway-2025
+cardiovascular,Heart failure,"ARNI, beta-blockers, MRAs, SGLT2 inhibitors",heart failure|hfref|sacubitril,bc-gpac-hf-drugs;ccs-chfs-hfref-2021;rxfiles-heart-failure;cep-heart-failure-2024
+respiratory,Asthma inhalers,"ICS-formoterol, ICS-LABA, SABA",asthma|inhaled corticosteroid|formoterol,bc-gpac-asthma-medications;cts-asthma-2021;rxfiles-asthma;tfp-411-budesonide-formoterol-rescue
+respiratory,COPD inhalers,"LAMA, LAMA-LABA, triple therapy",copd|lama|tiotropium|umeclidinium,bc-gpac-copd-medications;cts-copd-pharmacotherapy-2023;rxfiles-copd;cep-chronic-obstructive-pulmonary-disease-copd-2024
+respiratory,Smoking cessation,"varenicline, NRT, bupropion",smoking|tobacco|varenicline|nicotine,bc-gpac-tud-2024;rxfiles-smoking-cessation-chart
+endocrine-and-metabolic,Diabetes agents,"metformin, SGLT2 inhibitors, GLP-1 agonists, DPP-4 inhibitors",diabetes|metformin|sglt2|glp-1|antihyperglyc,bc-gpac-diabetes-agents;diabetes-canada-pharm-t2d-2024;diabetes-canada-cardiorenal-rx;rxfiles-diabetes;cfp-antihyperglycemic-deprescribing-2017
+endocrine-and-metabolic,Insulin,"basal, bolus, premixed",insulin,bc-gpac-diabetes-insulin;diabetes-canada-types-of-insulin;diabetes-canada-insulin-titration;diabetes-canada-insulin-rx-tool
+endocrine-and-metabolic,Obesity medications,"semaglutide, tirzepatide, naltrexone-bupropion, orlistat",obesity|weight|semaglutide|tirzepatide,bc-pad-weight-loss-drug-table-2025;cep-pharmacotherapy-for-obesity-management-2025;rxfiles-weight-loss-chart;cfp-new-drugs-weight-loss-2025
+endocrine-and-metabolic,Osteoporosis,"bisphosphonates, denosumab, romosozumab",osteoporosis|bisphosphonate|denosumab,bc-pad-osteoporosis-2024;osteoporosis-canada-2023;rxfiles-osteoporosis-chart;cfp-osteoporosis-approach-2026
+endocrine-and-metabolic,Thyroid,"levothyroxine, methimazole",thyroid|levothyroxine,rxfiles-thyroid-chart;ti-letter-154-thyroid;bc-gpac-thyroid-testing
+renal-and-genitourinary,Kidney dosing,"dose adjustment in CKD, sick-day rules",kidney|renal|ckd|creatinine,rxfiles-kidney;bc-gpac-ckd-2025;diabetes-canada-renal-impairment;diabetes-canada-sick-day-list;thrombosiscanada-cockcroft-gault
+renal-and-genitourinary,Urinary antibiotics,"nitrofurantoin, fosfomycin, TMP-SMX",urinary tract|uti|cystitis|nitrofurantoin,rxfiles-abx2-cystitis;bugs-and-drugs;tfp-337-uti-antibiotics;tfp-270-fosfomycin;pace-fluoroquinolones
+renal-and-genitourinary,Bladder and incontinence,"antimuscarinics, mirabegron",incontinence|overactive bladder|mirabegron,rxfiles-urinary-incontinence-drug-comparison-chart;cep-urinary-incontinence-2020
+gastrointestinal-and-liver,Acid suppression,"PPIs, H2 blockers",ppi|proton pump|gerd|dyspepsia|h2,bc-pad-ppi-2015;rxfiles-gi-charts;cfp-ppi-deprescribing-2017;deprescribing-org-proton-pump-inhibitor
+gastrointestinal-and-liver,H. pylori eradication,"bismuth quadruple, PAMC",pylori,bugsanddrugs-hpylori;rxfiles-gi-charts
+gastrointestinal-and-liver,IBS and bowel,"antispasmodics, laxatives, TCAs",irritable bowel|ibs|constipation|laxative,rxfiles-ibs-chart
+gastrointestinal-and-liver,Liver safety,"hepatotoxic drugs, hepatitis B and C treatment",liver|hepat|masld,livertox-nih;rxfiles-hepatitis-chart
+musculoskeletal,Analgesics and NSAIDs,"acetaminophen, NSAIDs, topical NSAIDs",nsaid|analges|acetaminophen|osteoarthritis|acute pain,rxfiles-acute-pain-chart;rxfiles-pain-book;cep-osteoarthritis-2017
+musculoskeletal,Chronic and neuropathic pain,"gabapentinoids, SNRIs, TCAs",neuropathic|chronic pain|gabapentin|duloxetine,bc-pad-neuropathic-pain-2018;cep-cncp-2024;rxfiles-pain-book
+musculoskeletal,Opioids,"tapering, MME, safer prescribing",opioid,ti-opioid-analgesics;cep-opioid-manager;bc-gpac-chronic-pain-opioids-patient-2022
+musculoskeletal,DMARDs and biologics,"methotrexate, hydroxychloroquine, TNF inhibitors",rheumatoid|dmard|methotrexate|biologic,bc-gpac-ra-dmards;rxfiles-ra-chart;rheuminfo-medications;rheuminfo-bsst
+musculoskeletal,Gout,"allopurinol, colchicine, febuxostat",gout|allopurinol|colchicine,rxfiles-gout-chart;rheuminfo-gout
+neurology,Migraine,"triptans, preventives, CGRP antagonists",migraine|headache|triptan|cgrp,rxfiles-migraine;cfp-migraine-pearls-2024;cep-headache-navigator-2016
+neurology,Dementia drugs,"donepezil, galantamine, rivastigmine, memantine",dementia|donepezil|cholinesterase|memantine,rxfiles-dementia-chart;cep-dementia-care;ccsmh-bpsd-2025;cfp-bpsd-2026
+neurology,Stroke prevention,"antiplatelets, anticoagulants, statins after TIA or stroke",stroke|tia|transient ischemic,bc-gpac-stroke-tia-2026;rxfiles-antithrombotics-chart;rxfiles-dapt-chart
+mental-health-and-substance-use,Antidepressants,"SSRIs, SNRIs, bupropion, mirtazapine",depress|antidepress|ssri|anxiety,rxfiles-depression;cep-anxiety-depression-2023;ti-letter-157-2025
+mental-health-and-substance-use,Anxiety and sleep,"SSRIs, buspirone, z-drugs, benzodiazepines",anxiety|insomnia|sleep|benzodiazepine|zopiclone,rxfiles-anxiety;rxfiles-sleep-chart;bc-pad-insomnia-2020;cfp-chronic-insomnia-2024;deprescribing-org-benzodiazepine-deprescribing
+mental-health-and-substance-use,ADHD medications,"methylphenidate, lisdexamfetamine, atomoxetine, guanfacine",adhd|attention-deficit|methylphenidate|stimulant,caddra-medication-chart;rxfiles-adhd;cep-adhd-in-adults-2025;cps-adhd-part3-2018
+mental-health-and-substance-use,Antipsychotics,"quetiapine, risperidone, aripiprazole",antipsychotic|psychosis|bpsd,deprescribing-antipsychotics-2018;cfp-antipsychotic-deprescribing-2018;ccsmh-bpsd-2025
+mental-health-and-substance-use,Opioid agonist treatment,"buprenorphine-naloxone, methadone, slow-release oral morphine",opioid use|oud|buprenorphine|methadone,bc-gpac-oud-2018;bccsu-methadone-chart-2020;rxfiles-pain-book
+mental-health-and-substance-use,Alcohol use disorder,"naltrexone, acamprosate, gabapentin",alcohol|naltrexone|acamprosate,rxfiles-aud-chart;bc-gpac-hrd-aud-2024;cep-alcohol-use-disorder-2019
+dermatology,Topical corticosteroids,"potency ladder, amounts to prescribe",topical steroid|corticosteroid|eczema|dermatitis,rxfiles-topical-corticosteroids-chart;pathwaysbc-topical-steroid-amounts-2022;dermnet-topical-steroids;dermnet-fingertip-unit
+dermatology,Acne treatments,"benzoyl peroxide, retinoids, doxycycline, isotretinoin",acne|isotretinoin|retinoid,bc-pad-acne-2026;rxfiles-acne-chart;cfp-acne-update-2025;dermnet-isotretinoin
+dermatology,Psoriasis and eczema systemic,"methotrexate, biologics, JAK inhibitors, dupilumab",psoriasis|atopic|biologic|dupilumab,cep-psoriasis-2026;cdn-ad-systemic-consensus-2025;cdn-ad-topical-consensus-2025;dermnet-biologics
+infectious-disease,Antibiotics for common infections,"respiratory, skin and soft tissue, urinary",antibiotic|cellulitis|respiratory tract|pharyngitis|sinusitis,bugs-and-drugs;rxfiles-abx-rti-charts;rxfiles-antibiotics;pho-antimicrobial-stewardship-primary-care
+infectious-disease,Antivirals,"valacyclovir, acyclovir, oseltamivir",antiviral|zoster|shingles|herpes|influenza,dermnet-valaciclovir;dermnet-aciclovir;bccdc-zoster-recombinant-vaccine-2025
+hematology-and-oncology,Iron replacement,"oral iron, IV iron",iron|anemia|ferritin,rxfiles-iron-management-chart;bc-gpac-iron-deficiency-2019
+hematology-and-oncology,VTE treatment,"DOACs, LMWH, duration",vte|venous thrombo|dvt|pulmonary embol|heparin,thrombosiscanada-dvt-treatment-2025;thrombosiscanada-pe-treatment-2025;thrombosiscanada-vte-duration-2026;thrombosiscanada-heparins-2025;rxfiles-antithrombotics-chart
+eyes-ears-nose-and-throat,Allergy and rhinitis,"intranasal steroids, oral antihistamines",rhinitis|antihistamine|allerg,rxfiles-intranasal-corticosteroid-chart;rxfiles-otc-cough-cold-allergy-chart
+eyes-ears-nose-and-throat,Eye drops,"antibiotic drops, lubricants, ocular antihistamines",eye|ocular|conjunctiv,rxfiles-dry-eye-ocular-allergy-chart
+eyes-ears-nose-and-throat,Ear infections,"amoxicillin for AOM, otic drops",otitis,rxfiles-abx-acute-otitis-media;cps-acute-otitis-media-2016;cfp-otitis-externa-approach-2024
+eyes-ears-nose-and-throat,Anaphylaxis,"epinephrine auto-injectors",anaphyla|epinephrine,odb-epinephrine-auto-injectors
+sexual-and-reproductive-health,Contraception,"combined pill, IUDs, implant, emergency contraception",contracept|iud|levonorgestrel,rxfiles-contraception-chart;ti-letter-150-emergency-contraception;cfp-larc-extended-duration-2025;tfp-315-etonogestrel-implant
+sexual-and-reproductive-health,Menopause hormone therapy,"estradiol, progesterone, non-hormonal options",menopaus|hormone therapy|vasomotor,bc-pad-menopause-drug-table-2026;cms-mht-tables-2025;cms-mht-equivalency-table-2025;rxfiles-menopause;cep-menopause-management-2025
+sexual-and-reproductive-health,STI treatment and prevention,"PrEP, doxy-PEP, gonorrhea and chlamydia treatment",sti|sexually transmitted|prep|chlamydia|gonorr,bccfe-prep-guidance-2026;rxfiles-hiv-prep-chart;tfp-398-doxy-pep;bugs-and-drugs
+children,Pediatric dosing and pain,"weight-based dosing, acetaminophen, ibuprofen",pediatric|child|infant,rxfiles-antibiotics;pediatric-pain-chart-subscription;cps-procedural-pain-distress
+older-adults,Medication review in older adults,"Beers, STOPP/START, Geri-RxFiles",older|geriatric|frail,rxfiles-geri;cep-benzodiazepine-older-adults-2019;cep-ppi-older-adults-2020;ti-deprescribing

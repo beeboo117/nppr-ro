@@ -112,7 +112,16 @@ function albertaCoverage(): string {
     `<li class="item" data-region="AB" data-only="yes" data-text="${esc((r.title + ' ' + r.note + ' alberta').toLowerCase())}"><span class="line-main"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><span class="chip rg" data-rg="AB">AB</span></span><span class="note">${esc(r.note)}</span></li>`).join('');
 }
 
-export function buildPrescribingBySystem(pages: Page[], base: string, folderIcons: Record<string, string>): Page[] {
+type RefRow = (id: string) => { html: string; attrs: string; entry: Entry } | null;
+
+function readClasses(): Record<string, string>[] {
+  const f = resolve('data/prescribing/classes.csv');
+  if (!existsSync(f)) return [];
+  return parseCsv(readFileSync(f, 'utf8').replace(/\r\n?/g, '\n'), { columns: true, skip_empty_lines: true, bom: true });
+}
+
+export function buildPrescribingBySystem(pages: Page[], base: string, folderIcons: Record<string, string>, refRow: RefRow): Page[] {
+  const classes = readClasses();
   const byId = new Map(pages.map(p => [p.id, p]));
   const rxIndex = byId.get('prescribing');
   if (!rxIndex) return [];
@@ -161,11 +170,30 @@ export function buildPrescribingBySystem(pages: Page[], base: string, folderIcon
     if (refs && g.renal) safe.push(...blocksOf(refs, /^dosing calculators$/i).filter(b => /creatinine/i.test(b.top.text)));
     const safeHtml = `<ul class="items">${safe.map(b => blockHtml(b, '')).join('')}<li class="item md-li">More: ${link('prescribing/deprescribing', 'Deprescribing')} algorithms, ${link('prescribing/drug-references', 'Drug References')} for monographs, interactions and safety alerts, and ${link('populations/pregnancy-and-perinatal', 'Pregnancy and Perinatal')} for use in pregnancy.</li></ul>`;
 
+    // 0. Drug classes (data/prescribing/classes.csv)
+    const classEntries: Entry[] = [];
+    const tiles = classes.filter(c => c.system === g.slug).map(c => {
+      const re = new RegExp(`\\b(?:${c.match})`, 'i');
+      const usedIn = srcPages.filter(p => re.test(p.title) || p.rows.some(r => g.heading.test(r.heading.trim()) && re.test(r.text)));
+      const refs = c.refs.split(';').map(s => s.trim()).filter(Boolean).map(id => {
+        const r = refRow(id);
+        if (!r) { console.warn(`[prescribing] unknown source id "${id}" in classes.csv`); return ''; }
+        classEntries.push(r.entry);
+        return `<li class="item"${r.attrs}>${r.html}</li>`;
+      }).join('');
+      return `<details class="rx-tile" id="class-${slug(c.class)}"><summary><span class="rx-tile-name">${esc(c.class)}</span><span class="rx-tile-ex">${esc(c.examples)}</span><span class="chev" aria-hidden="true"></span></summary>
+<div class="rx-tile-body"><ul class="items">${refs}</ul>${usedIn.length ? `<p class="rx-used">Used in ${usedIn.map(p => `<a class="chip-link" href="${p.href}">${esc(p.title)}</a>`).join(' ')}</p>` : ''}</div></details>`;
+    });
+
     const headings: Heading[] = [];
     let html = '';
     if (g.callout) {
       const target = byId.get(g.callout);
       if (target) html += `<div class="callout"><p class="callout-title">Antibiotic choice and stewardship</p><p>Start with ${link(g.callout, target.title)}: Canadian and provincial antibiotic guides, penicillin allergy assessment and stewardship tools. Below are the condition-specific references.</p></div>`;
+    }
+    if (tiles.length) {
+      html += section('classes', 'Drug classes', tiles.length, `<p class="sheet-note"><em>Open a class for its key references and the conditions that use it.</em></p><div class="rx-tiles">${tiles.join('')}</div>`);
+      headings.push({ id: 'classes', text: 'Drug classes', level: 2, count: tiles.length });
     }
     if (condBlocks.length) { const byLabel = g.type === 'rx-system' ? 'By condition' : 'By topic';
       html += section('by-condition', byLabel, countOf(condBlocks), condHtml); headings.push({ id: 'by-condition', text: byLabel, level: 2, count: countOf(condBlocks) }); }
@@ -178,7 +206,7 @@ export function buildPrescribingBySystem(pages: Page[], base: string, folderIcon
       icon: g.icon || folderIcons[g.slug] || sysIndex?.icon || '💊',
       intro: `Prescribing references for ${what}, gathered from ${srcPages.filter(p => all.some(b => b.page === p)).length} pages. Each source appears once; "Also in" shows the other pages that cite it.`,
       aliases: g.aliases, researchTerm: g.research, html, headings,
-      entries: entriesOf([...condBlocks, ...cov, ...safe]),
+      entries: [...classEntries, ...entriesOf([...condBlocks, ...cov, ...safe])],
     }));
 
     // "More prescribing for …" on each source page's own prescribing section.

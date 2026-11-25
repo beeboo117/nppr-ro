@@ -329,6 +329,18 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
   return { html: out.join('\n'), headings, entries, rows: sheetRows };
 }
 
+// A registry source rendered as a list row, for site-built pages.
+const plainMd = new Marked({ gfm: true });
+export function refRow(id: string): { html: string; attrs: string; entry: Entry } | null {
+  const s = getRegistry().get(id);
+  if (!s) return null;
+  const lead = (s.publisher || '').split(/[\s(]/)[0].toLowerCase();
+  const title = s.publisher && lead && !s.title.toLowerCase().includes(lead) ? `${s.publisher} - ${s.title}` : s.title;
+  const r = { title, url: s.url, pdf: blank(s.pdf), year: yearOf(s.year), region: s.region, note: '', links: '', keywords: s.keywords || '', publisher: s.publisher, only: '' };
+  const entry: Entry = { title, url: s.url, pdf: r.pdf, year: r.year, region: s.region, only: '', note: '', kind: s.kind, heading: 'Drug classes', publisher: s.publisher, keywords: r.keywords };
+  return { html: renderLine(r, plainMd, {}), attrs: rowAttrs(r), entry };
+}
+
 // ---------- page loading ----------
 let cache: { pages: Page[]; sections: Section[]; byId: Map<string, Page> } | null = null;
 
@@ -409,7 +421,7 @@ export function loadSite() {
   }
 
   // Site-built pages (kept in this repo): prescribing by body system.
-  pages.push(...buildPrescribingBySystem(pages, BASE, FOLDER_ICONS));
+  pages.push(...buildPrescribingBySystem(pages, BASE, FOLDER_ICONS, refRow));
 
   const byId = new Map(pages.map(p => [p.id, p]));
   // Parent / children / breadcrumbs from the folder tree.
