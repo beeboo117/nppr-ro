@@ -360,6 +360,26 @@ async function searchPubMed(q: string, ptype: string, years: number, start: numb
   return { items, total };
 }
 
+// NCBI Bookshelf chapters (StatPearls, NICE, LactMed, textbooks) are indexed in PubMed under the "pubmed books" filter.
+async function searchBooks(q: string, start: number): Promise<{ items: RItem[]; total: number }> {
+  const run = (term: string) => getJson(`${EUTILS}esearch.fcgi?db=pubmed&retmode=json&retmax=10&retstart=${start}&sort=relevance&tool=nppr-ro&term=${encodeURIComponent(term + ' AND "pubmed books"[filter]')}`);
+  let s = await run(`(${q})[ti]`);
+  if (Number(s.esearchresult?.count ?? 0) < 3) s = await run(`(${q})`);
+  const ids: string[] = s.esearchresult?.idlist ?? [];
+  const total = Number(s.esearchresult?.count ?? 0);
+  if (!ids.length) return { items: [], total };
+  const sum = await getJson(`${EUTILS}esummary.fcgi?db=pubmed&retmode=json&tool=nppr-ro&id=${ids.join(',')}`);
+  const items = ids.map(id => sum.result?.[id]).filter(Boolean).map((r: any): RItem => {
+    const nbk = (r.articleids || []).find((a: any) => a.idtype === 'bookaccession')?.value;
+    const book = r.booktitle || '';
+    const title = r.title ? `${r.title.replace(/\.$/, '')}${book ? ` (${book})` : ''}` : book;
+    const tags: RItem['tags'] = [{ t: r.bookname === 'statpearls' ? 'StatPearls' : r.bookname?.startsWith('nice') ? 'NICE' : 'Book chapter' }, { t: 'Free', c: 'oa' }];
+    return { title, url: nbk ? `https://www.ncbi.nlm.nih.gov/books/${nbk}/` : `https://pubmed.ncbi.nlm.nih.gov/${r.uid}/`, tags,
+      meta: [r.publishername, (r.sortpubdate || '').slice(0, 4) ? `updated ${(r.sortpubdate || '').slice(0, 4)}` : ''].filter(Boolean) };
+  });
+  return { items, total };
+}
+
 const EPMC = 'https://www.ebi.ac.uk/europepmc/webservices/rest/search';
 async function searchEPMC(query: string, page: string, kind: 'free' | 'books'): Promise<{ items: RItem[]; total: number; next: string }> {
   const j = await getJson(`${EPMC}?format=json&pageSize=10&resultType=core&cursorMark=${encodeURIComponent(page)}&query=${encodeURIComponent(query)}`);
@@ -437,13 +457,17 @@ function initResearch() {
         const body = items.map(itemHtml).join('') || (append ? '' : '<li class="r-empty">No recent articles. Try a broader term.</li>');
         list.insertAdjacentHTML('beforeend', '');
         list.innerHTML = (append ? list.innerHTML : head) + body + (state.start + 10 < total ? moreBtn('Load more articles') : '');
-      } else if (state.tab === 'free' || state.tab === 'books') {
-        const query = state.tab === 'free'
-          ? `(${q}) AND OPEN_ACCESS:y AND (PUB_TYPE:"review" OR PUB_TYPE:"guideline" OR PUB_TYPE:"practice guideline") AND FIRST_PDATE:[${NOW_YEAR - 3}-01-01 TO ${NOW_YEAR}-12-31]`
-          : `(${q}) AND SRC:NBK`;
-        const { items, total, next } = await searchEPMC(query, state.cursor, state.tab);
+      } else if (state.tab === 'books') {
+        const { items, total } = await searchBooks(q, state.start);
         if (token !== state.token) return;
-        const label = state.tab === 'free' ? `free full-text reviews and guidelines since ${NOW_YEAR - 3}` : 'book chapters from NCBI Bookshelf';
+        const head = append ? '' : `<li class="r-empty">${total.toLocaleString()} free book chapters from NCBI Bookshelf (StatPearls, NICE and more).</li>`;
+        const body = items.map(itemHtml).join('') || (append ? '' : '<li class="r-empty">No chapters found. Try a broader term.</li>');
+        list.innerHTML = (append ? list.innerHTML : head) + body + (state.start + 10 < total ? moreBtn('Load more chapters') : '');
+      } else if (state.tab === 'free') {
+        const query = `(${q}) AND OPEN_ACCESS:y AND (PUB_TYPE:"review" OR PUB_TYPE:"guideline" OR PUB_TYPE:"practice guideline") AND FIRST_PDATE:[${NOW_YEAR - 3}-01-01 TO ${NOW_YEAR}-12-31]`;
+        const { items, total, next } = await searchEPMC(query, state.cursor, 'free');
+        if (token !== state.token) return;
+        const label = `free full-text reviews and guidelines since ${NOW_YEAR - 3}`;
         const head = append ? '' : `<li class="r-empty">${total.toLocaleString()} ${label}.</li>`;
         const body = items.map(itemHtml).join('') || (append ? '' : '<li class="r-empty">Nothing found. Try a broader term.</li>');
         state.cursor = next;
@@ -457,9 +481,9 @@ function initResearch() {
         list.innerHTML = wiki + links;
       }
       const more = $('#r-more');
-      if (more) more.onclick = () => { if (state.tab === 'articles') state.start += 10; load(true); };
+      if (more) more.onclick = () => { if (state.tab === 'articles' || state.tab === 'books') state.start += 10; load(true); };
     } catch {
-      if (token === state.token) fail(state.tab === 'articles' ? 'PubMed' : state.tab === 'fun' ? 'Wikipedia' : 'Europe PMC');
+      if (token === state.token) fail(state.tab === 'articles' || state.tab === 'books' ? 'PubMed' : state.tab === 'fun' ? 'Wikipedia' : 'Europe PMC');
     }
   }
 
