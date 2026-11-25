@@ -6,7 +6,7 @@ const { pages, current } = Astro.props;
 <ul class="nav-list">
   {pages.map(p => (
     <li class={p.isIndex ? 'nav-sub' : ''} data-nav-text={(p.title + ' ' + p.aliases.join(' ')).toLowerCase()}>
-      <a href={p.href} aria-current={p.id === current ? 'page' : undefined}>{p.title}</a>
+      <a href={p.href} aria-current={p.id === current ? 'page' : undefined}>{p.short || p.title}</a>
       {p.isIndex && p.children.length > 0 && <Astro.self pages={p.children} current={current} />}
     </li>
   ))}

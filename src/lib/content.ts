@@ -6,6 +6,7 @@ import { join, dirname, relative, resolve, posix } from 'node:path';
 import { parse as parseCsv } from 'csv-parse/sync';
 import { parse as parseYaml } from 'yaml';
 import { Marked } from 'marked';
+import { buildPrescribingBySystem } from './prescribing';
 
 export const CONTENT_ROOT = resolve(process.env.NPPR_CONTENT || 'content');
 export const DOCS = join(CONTENT_ROOT, 'docs');
@@ -20,6 +21,9 @@ export interface Entry {
   title: string; url: string; pdf: string; year: number | null; region: string; only: string;
   note: string; kind: string; heading: string; publisher: string; keywords: string;
 }
+
+// One rendered row of a list sheet, kept so pages can be rebuilt from other pages' rows (e.g. prescribing by system).
+export interface SheetRow { heading: string; level: number; kind: string; key: string; attrs: string; html: string; note: string; text: string; entry?: Entry }
 
 export interface Heading { id: string; text: string; level: number; count: number; region?: string }
 
@@ -50,6 +54,11 @@ export interface Page {
   entries: Entry[];
   children: Page[];      // for index pages: direct child pages and sub-sections
   parent?: Page;
+  rows: SheetRow[];      // every list-sheet row, rendered
+  generated?: boolean;   // built by this site, not an upstream page
+  short?: string;        // shorter title for menus and cards
+  researchTerm?: string; // research sidebar query, when the title isn't a good one
+  featured?: Page;       // index page whose children are shown as a featured grid
 }
 
 export interface Section {
@@ -65,9 +74,9 @@ const stripNum = (seg: string) => seg.replace(/^\d+\s+/, '');
 const segOrder = (seg: string) => { const m = seg.match(/^(\d+)\s/); return m ? Number(m[1]) : 999; };
 
 const decodeEntities = (s: string) => s.replace(/&#(\d+);/g, (_m, n) => String.fromCharCode(Number(n))).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
-const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
+export const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
 
-function readCsv(file: string): Record<string, string>[] {
+export function readCsv(file: string): Record<string, string>[] {
   if (!existsSync(file)) return [];
   // Upstream sheets mix CRLF and LF line endings; normalise so rows don't merge.
   return parseCsv(readFileSync(file, 'utf8').replace(/\r\n?/g, '\n'), { columns: true, skip_empty_lines: true, relax_column_count: true, bom: true });
@@ -202,7 +211,7 @@ function freshness(y: number | null) {
 
 const REGION_LABEL: Record<string, string> = { INTL: 'Intl', CA: 'Canada' };
 
-function renderLine(r: any, md: Marked, opts: { dash?: boolean }) {
+export function renderLine(r: any, md: Marked, opts: { dash?: boolean }) {
   const title = r.title || r.url || 'Untitled';
   const link = r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(title)}</a>` : `<span>${esc(title)}</span>`;
   const chips: string[] = [];
@@ -214,11 +223,11 @@ function renderLine(r: any, md: Marked, opts: { dash?: boolean }) {
   return `<span class="line-main">${link}${chips.join('')}</span>${links}${note}`;
 }
 
-function rowAttrs(r: any) {
+export function rowAttrs(r: any) {
   return ` data-region="${esc(r.region || '')}"${r.only ? ` data-only="${esc(r.only)}"` : ''} data-text="${esc((r.title + ' ' + r.note + ' ' + r.keywords + ' ' + r.publisher).toLowerCase())}"`;
 }
 
-interface SheetResult { html: string; headings: Heading[]; entries: Entry[] }
+interface SheetResult { html: string; headings: Heading[]; entries: Entry[]; rows: SheetRow[] }
 
 function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash?: boolean; style?: string }): SheetResult {
   const reg = getRegistry();
@@ -230,7 +239,7 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
       level: raw.sub === 'yes' ? 1 : Number(raw.level || 0) || 0,
       title: pick('title'), url: pick('url'), pdf: pick('pdf'), year: yearOf(pick('year')),
       links: blank(raw.links), note: blank(raw.note), keywords: [raw.keywords, src?.keywords].filter(Boolean).join(' '),
-      region: pick('region'), only: raw.only || '', publisher: src?.publisher || '', srcKind: src?.kind || '',
+      region: pick('region'), only: raw.only || '', publisher: src?.publisher || '', srcKind: src?.kind || '', source: raw.source || '',
     };
   });
 
@@ -240,6 +249,7 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
 
   const headings: Heading[] = [];
   const entries: Entry[] = [];
+  const sheetRows: SheetRow[] = [];
   const out: string[] = [];
   let curH = '', curSub = '', listOpen = false, boxOpen = false, sectionOpen = false, subOpen = false;
   const closeBox = () => { if (boxOpen) { out.push('</ul></div></details></li>'); boxOpen = false; } };
@@ -275,9 +285,19 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
       }
     }
 
+    let entry: Entry | undefined;
     if (r.title || r.url) {
-      entries.push({ title: r.title, url: r.url, pdf: r.pdf, year: r.year, region: r.region, only: r.only, note: r.note.replace(/[*_`]/g, ''),
-        kind: r.srcKind || r.kind, heading: r.subheading || r.heading, publisher: r.publisher, keywords: r.keywords });
+      entry = { title: r.title, url: r.url, pdf: r.pdf, year: r.year, region: r.region, only: r.only, note: r.note.replace(/[*_`]/g, ''),
+        kind: r.srcKind || r.kind, heading: r.subheading || r.heading, publisher: r.publisher, keywords: r.keywords };
+      entries.push(entry);
+    }
+    {
+      const plain = (r.kind === 'md' || r.kind === 'note');
+      const html = plain
+        ? md.parseInline(String(r.title || r.note).replace(/^\s*[-*]\s+/, '')) as string + (r.kind === 'note' && r.pdf ? ` · <a href="${esc(r.pdf)}" target="_blank" rel="noopener">PDF</a>` : '')
+        : renderLine(r.kind === 'box' ? { ...r, note: '' } : r, md, opts);
+      sheetRows.push({ heading: r.heading, level: r.level, kind: r.kind, key: (r.source || r.url || r.title || '').trim().toLowerCase(), attrs: rowAttrs(r),
+        html, note: r.kind === 'box' && r.note ? md.parseInline(r.note) as string : '', text: `${r.title} ${r.note} ${r.keywords} ${r.publisher} ${r.source}`, entry });
     }
 
     if (r.kind === 'md') {
@@ -306,7 +326,7 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
     }
   }
   closeSection();
-  return { html: out.join('\n'), headings, entries };
+  return { html: out.join('\n'), headings, entries, rows: sheetRows };
 }
 
 // ---------- page loading ----------
@@ -347,6 +367,7 @@ export function loadSite() {
     const md = makeMarked(rel, linkMap);
     let headings: Heading[] = [];
     let entries: Entry[] = [];
+    const rows: SheetRow[] = [];
     const isIndex = rel.endsWith('index.md');
 
     // Replace list-sheet markers with rendered sheets.
@@ -354,7 +375,7 @@ export function loadSite() {
     const sheets: string[] = [];
     text = text.replace(/<!--\s*nppr-list:\s*(.+?\.csv)([^>]*?)-->/g, (_m, csv, optStr) => {
       const res = renderSheet(join(DOCS, dirname(rel), csv.trim()), md, { counts: /counts/.test(optStr), dash: /notes=dash/.test(optStr), style: (optStr.match(/style=(\w+)/) || [])[1] });
-      headings.push(...res.headings); entries.push(...res.entries);
+      headings.push(...res.headings); entries.push(...res.entries); rows.push(...res.rows);
       sheets.push(res.html);
       return `\n\n<!--SHEET${sheets.length - 1}-->\n\n`;
     });
@@ -383,9 +404,12 @@ export function loadSite() {
       region: data.region === true ? 'ON' : String(data.region || ''),
       lastReviewed: String(data['last-reviewed'] || ''), reviewDue: String(data['review-due'] || ''),
       status: String(data.status || ''), icon: iconFor(data['card-icon'], ''), logo: data.logo ? rewriteHref(String(data.logo), rel, linkMap) : '',
-      intro, html, headings, entries, children: [],
+      intro, html, headings, entries, children: [], rows,
     });
   }
+
+  // Site-built pages (kept in this repo): prescribing by body system.
+  pages.push(...buildPrescribingBySystem(pages, BASE, FOLDER_ICONS));
 
   const byId = new Map(pages.map(p => [p.id, p]));
   // Parent / children / breadcrumbs from the folder tree.
@@ -409,7 +433,7 @@ export function loadSite() {
     const meta = SECTION_META[slug] || { icon: '📁', blurb: '', color: '#64748b' };
     const index = byId.get(slug);
     return { slug, title: index?.title || stripNum(dir), order: segOrder(dir) === 999 ? 100 : segOrder(dir), index,
-      pages: pages.filter(p => p.section === slug && !p.isIndex), ...meta };
+      pages: pages.filter(p => p.section === slug && !p.isIndex && !p.generated), ...meta };
   }).sort((a, b) => a.order - b.order);
 
   for (const p of pages) {
@@ -459,7 +483,7 @@ function applyRegionOverlays(pages: Page[]) {
     `<li class="item" data-region="AB">${renderLine({ title: e.title, url: e.url, note: e.note, region: '', year: null, pdf: '', links: '' }, md, {})}</li>`).join('')}</ul></div>`).join('');
 
   for (const p of pages) {
-    if (p.isIndex || !OVERLAY_SECTIONS.has(p.section)) continue;
+    if (p.isIndex || p.generated || !OVERLAY_SECTIONS.has(p.section)) continue;
     const pw = byPage.get(p.id) || [];
     const tr = topicRows.get(p.id) || [];
     const hasSheet = p.html.includes('class="sheet-sec');

@@ -29,6 +29,11 @@ const next = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : undefin
 const related = siblings.filter(s => s.id !== page.id).slice(0, 8);
 const showPanel = !page.isIndex && page.section !== 'about';
 const hasSheet = page.entries.length > 0;
+const hub = page.featured;
+const hubSystems = hub ? hub.children.filter(c => c.type === 'rx-system') : [];
+const hubPops = hub ? hub.children.filter(c => c.type === 'rx-population') : [];
+const gridKids = hub ? page.children.filter(c => c.id !== hub.id) : page.children;
+const srcCount = (p: Page) => p.entries.filter(e => e.url || e.pdf).length;
 ---
 <Base title={page.title} description={page.description || page.intro.slice(0, 160)} currentId={page.id} section={page.section} panel={showPanel}>
   <div class={page.isIndex ? 'wide' : 'content-wrap'} data-page-id={page.id} data-page-title={page.title} data-page-href={page.href} data-page-icon={page.icon} data-page-section={sec?.title}>
@@ -47,7 +52,7 @@ const hasSheet = page.entries.length > 0;
         {links > 0 && <span class="pill"><b>{links}</b> sources</span>}
         {pdfs > 0 && <span class="pill"><b>{pdfs}</b> PDFs</span>}
         {newest && <span class="pill">Newest <b>{newest}</b></span>}
-        {page.isIndex && <span class="pill"><b>{page.children.length}</b> topics</span>}
+        {page.isIndex && <span class="pill"><b>{gridKids.length}</b> {page.generated ? "pages" : "topics"}</span>}
         {page.region && <span class="pill">For <b>{page.region}</b> only</span>}
         {!page.isIndex && <button class="pill bookmark-btn" id="bookmark-btn" aria-pressed="false" style="cursor:pointer">☆ Save</button>}
       </div>
@@ -55,16 +60,35 @@ const hasSheet = page.entries.length > 0;
 
     {page.isIndex ? (
       <>
+        {hub && (
+          <>
+            <div class="section-title"><h2>{hub.icon} {hub.title}</h2><a href={hub.href} class="see-all">About this view</a></div>
+            <div class="grid sys-grid stagger">
+              {hubSystems.map(c => (
+                <a class="card sys-card" href={c.href} style={`--c:${color}`}><div class="ic">{c.icon}</div><h3>{c.short || c.title}</h3><div class="foot">{srcCount(c)} sources</div></a>
+              ))}
+            </div>
+            {hubPops.length > 0 && <>
+              <div class="section-title"><h2>By population</h2></div>
+              <div class="grid sys-grid stagger">
+                {hubPops.map(c => (
+                  <a class="card sys-card" href={c.href} style={`--c:${color}`}><div class="ic">{c.icon}</div><h3>{c.short || c.title}</h3><div class="foot">{srcCount(c)} sources</div></a>
+                ))}
+              </div>
+            </>}
+            <div class="section-title"><h2>By task</h2></div>
+          </>
+        )}
         <div class="grid stagger">
-          {page.children.map(c => (
+          {gridKids.map(c => (
             <a class="card" href={c.href} style={`--c:${color}`}>
               <div class="ic">{c.icon}</div>
-              <h3>{c.title}</h3>
+              <h3>{c.short || c.title}</h3>
               <p>{c.description || c.intro}</p>
               {c.isIndex && c.children.length > 0 && (
                 <ul class="kids">{c.children.slice(0, 5).map(k => <li>· {k.title}</li>)}{c.children.length > 5 && <li>+ {c.children.length - 5} more</li>}</ul>
               )}
-              <div class="foot">{c.isIndex ? `${c.children.length} topics` : `${c.entries.length || ''}${c.entries.length ? ' sources' : ''}`}</div>
+              <div class="foot">{c.isIndex ? `${c.children.length} ${c.generated ? 'pages' : 'topics'}` : `${c.entries.length || ''}${c.entries.length ? ' sources' : ''}`}</div>
             </a>
           ))}
         </div>
@@ -91,7 +115,7 @@ const hasSheet = page.entries.length > 0;
             <div class="section-title"><h2>Also in {page.parent?.title}</h2></div>
             <div class="grid stagger">
               {related.map(r => (
-                <a class="card" href={r.href} style={`--c:${color}`}><div class="ic">{r.icon}</div><h3>{r.title}</h3><div class="foot">{r.entries.length} sources</div></a>
+                <a class="card" href={r.href} style={`--c:${color}`}><div class="ic">{r.icon}</div><h3>{r.short || r.title}</h3><div class="foot">{r.entries.length} sources</div></a>
               ))}
             </div>
           </section>
@@ -104,7 +128,9 @@ const hasSheet = page.entries.length > 0;
         )}
       </>
     )}
-    <p class="r-foot" style="margin-top:30px">Original page: <a href={`https://github.com/joegrafe/np-practice-resource/blob/main/docs/${page.file.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener">view on GitHub</a> · Content © NPPR.ca contributors, CC BY 4.0.</p>
+    {page.generated ? (
+      <p class="r-foot" style="margin-top:30px">Built by this site from the prescribing sections of NPPR.ca condition and population pages · Content © NPPR.ca contributors, CC BY 4.0.</p>
+    ) : <p class="r-foot" style="margin-top:30px">Original page: <a href={`https://github.com/joegrafe/np-practice-resource/blob/main/docs/${page.file.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener">view on GitHub</a> · Content © NPPR.ca contributors, CC BY 4.0.</p>}
   </div>
   {showPanel && <ResearchPanel page={page} slot="panel" />}
 </Base>

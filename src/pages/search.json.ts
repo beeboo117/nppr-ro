@@ -9,7 +9,7 @@ export function GET() {
   }));
   const seen = new Set<string>();
   const E: any[] = [];
-  for (const p of pages) for (const e of p.entries) {
+  for (const p of pages) for (const e of p.generated ? [] : p.entries) {
     const key = (e.url || e.pdf) + '|' + p.id;
     if (!e.title || !(e.url || e.pdf) || seen.has(key)) continue;
     seen.add(key);

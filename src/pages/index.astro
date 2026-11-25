@@ -6,7 +6,7 @@ import { loadSite, getRegistry, upstreamInfo } from '../lib/content';
 const { pages, sections } = loadSite();
 const reg = [...getRegistry().values()];
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-const topics = pages.filter(p => !p.isIndex && p.section !== 'about');
+const topics = pages.filter(p => !p.isIndex && !p.generated && p.section !== 'about');
 const NOW = 2026;
 
 // Stats

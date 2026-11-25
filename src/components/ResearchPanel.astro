@@ -4,7 +4,7 @@ interface Props { page: Page }
 const { page } = Astro.props;
 // Main search term: the title without its abbreviation in brackets.
 const abbrev = (page.title.match(/\(([^)]+)\)/) || [])[1] || '';
-const term = page.title.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/^(Approach to|Management of)\s+/i, '').replace(/\s+/g, ' ').trim();
+const term = page.researchTerm || page.title.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/^(Approach to|Management of)\s+/i, '').replace(/\s+/g, ' ').trim();
 const extra = [abbrev, ...page.aliases.filter(a => a.length > 2 && !/\s{2}/.test(a))].filter(Boolean).slice(0, 3);
 ---
 <aside class="research" id="research" aria-label="Research sidebar" data-term={term} data-extra={JSON.stringify(extra)}>
