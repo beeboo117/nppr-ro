@@ -1,0 +1,153 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadSite, getRegistry, upstreamInfo } from '../lib/content';
+
+const { pages, sections } = loadSite();
+const reg = [...getRegistry().values()];
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const topics = pages.filter(p => !p.isIndex && p.section !== 'about');
+const NOW = 2026;
+
+// Stats
+const yrs = reg.map(r => Number((r.year || '').match(/\d{4}/)?.[0])).filter(y => y > 1990 && y <= NOW);
+const recent5 = yrs.filter(y => y >= NOW - 4).length;
+const pdfCount = reg.filter(r => r.pdf).length;
+
+// Conditions by body system
+const systemCounts = new Map<string, { n: number; href: string }>();
+const cond = sections.find(s => s.slug === 'conditions');
+for (const c of cond?.index?.children ?? []) if (c.isIndex) systemCounts.set(c.title, { n: c.children.length, href: c.href });
+const systems = [...systemCounts.entries()].sort((a, b) => b[1].n - a[1].n);
+const maxSys = Math.max(1, ...systems.map(s => s[1].n));
+
+// Source years histogram, 2012-2026, earlier grouped
+const START = 2012;
+const yearBins: { label: string; n: number }[] = [{ label: `<${START}`, n: yrs.filter(y => y < START).length }];
+for (let y = START; y <= NOW; y++) yearBins.push({ label: String(y), n: yrs.filter(v => v === y).length });
+const maxYear = Math.max(1, ...yearBins.map(b => b.n));
+
+// Regions
+const regionNames: Record<string, string> = { BC: 'British Columbia', CA: 'Canada (national)', ON: 'Ontario', INTL: 'International', AB: 'Alberta', US: 'United States' };
+const regCounts = new Map<string, number>();
+for (const r of reg) { const k = r.region || 'Other'; regCounts.set(k, (regCounts.get(k) || 0) + 1); }
+const regionRows = [...regCounts.entries()].sort((a, b) => b[1] - a[1]);
+const topRegions = regionRows.slice(0, 5);
+const otherN = regionRows.slice(5).reduce((s, r) => s + r[1], 0);
+if (otherN) topRegions.push(['Other', otherN]);
+const maxReg = Math.max(1, ...topRegions.map(r => r[1]));
+
+// Recently reviewed + due soon
+const byReviewed = topics.filter(p => p.lastReviewed).sort((a, b) => b.lastReviewed.localeCompare(a.lastReviewed)).slice(0, 7);
+const dueSoon = topics.filter(p => p.reviewDue).sort((a, b) => a.reviewDue.localeCompare(b.reviewDue)).slice(0, 5);
+const fmt = (d: string) => new Date(d).toLocaleDateString('en-CA', { month: 'short', day: 'numeric', year: 'numeric' });
+const up = upstreamInfo();
+---
+<Base title="Home" nav={false}>
+  <div class="wide">
+    <section class="hero">
+      <span class="blob" style="width:300px;height:300px;background:#f0abfc;top:-80px;right:10%"></span>
+      <span class="blob" style="width:220px;height:220px;background:#67e8f9;bottom:-60px;left:20%;animation-delay:-6s"></span>
+      <div style="position:relative">
+        <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">NP Practice Resource · Ro's edition</div>
+        <h1>Find the right guideline, fast.</h1>
+        <p>Every topic from NPPR.ca, now with a live research sidebar, quick search and a dashboard of what's new and current.</p>
+        <button class="hero-search" data-open-palette>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          Search {topics.length} topics and {reg.length.toLocaleString()} sources…<kbd>Ctrl K</kbd>
+        </button>
+      </div>
+    </section>
+
+    <div class="stats stagger">
+      <div class="stat"><div class="v" data-count={topics.length}>{topics.length}</div><div class="l">Topic pages</div></div>
+      <div class="stat"><div class="v" data-count={reg.length}>{reg.length.toLocaleString()}</div><div class="l">Guidelines and sources</div></div>
+      <div class="stat"><div class="v" data-count={pdfCount}>{pdfCount.toLocaleString()}</div><div class="l">Direct PDF links</div></div>
+      <div class="stat"><div class="v"><span data-count={Math.round(100 * recent5 / Math.max(1, yrs.length))}>{Math.round(100 * recent5 / Math.max(1, yrs.length))}</span>%</div><div class="l">Sources from {NOW - 4} or later</div></div>
+    </div>
+
+    <div class="dash-grid">
+      <section class="panel">
+        <h2>Pick up where you left off</h2>
+        <p class="sub-t">Your recently read and saved topics stay on this device.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div><h3 style="font-size:13px;color:var(--muted);margin:0 0 6px">Recently read</h3><ul class="mini-list" id="recent-list"><li class="empty">Nothing yet. Open a topic to start.</li></ul></div>
+          <div><h3 style="font-size:13px;color:var(--muted);margin:0 0 6px">Saved ☆</h3><ul class="mini-list" id="saved-list"><li class="empty">Tap ☆ Save on any topic.</li></ul></div>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Recently reviewed</h2>
+        <p class="sub-t">Topic pages most recently checked by NPPR reviewers.</p>
+        <ul class="mini-list">
+          {byReviewed.map(p => <li><span>{p.icon}</span><a href={p.href}>{p.title}</a><span class="when">{fmt(p.lastReviewed)}</span></li>)}
+        </ul>
+      </section>
+    </div>
+
+    <div class="section-title"><h2>Browse by step of the visit</h2></div>
+    <div class="grid stagger">
+      {sections.filter(s => s.index && s.slug !== 'about').map(s => (
+        <a class="card" href={s.index!.href} style={`--c:${s.color}`}>
+          <div class="ic">{s.icon}</div>
+          <h3>{s.title}</h3>
+          <p>{s.blurb}</p>
+          <div class="foot">{s.pages.length} topics</div>
+        </a>
+      ))}
+    </div>
+
+    <div class="section-title"><h2>The library at a glance</h2></div>
+    <div class="dash-grid">
+      <section class="panel">
+        <h2>Condition pages by body system</h2>
+        <p class="sub-t">Click a system to open it.</p>
+        <div class="bars">
+          {systems.map(([name, v]) => (
+            <a class="bar-row" href={v.href} title={`${name}: ${v.n} pages`}>
+              <span class="lbl">{name}</span>
+              <span class="bar-track"><span class="bar-fill" data-w={(100 * v.n / maxSys).toFixed(1)}></span></span>
+              <span class="num">{v.n}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Where the sources come from</h2>
+        <p class="sub-t">Sources in the registry, by the region they're written for.</p>
+        <div class="bars">
+          {topRegions.map(([code, n]) => (
+            <div class="bar-row" title={`${regionNames[code] || code}: ${n.toLocaleString()} sources`}>
+              <span class="lbl">{regionNames[code] || code}</span>
+              <span class="bar-track"><span class="bar-fill" data-w={(100 * n / maxReg).toFixed(1)}></span></span>
+              <span class="num">{n}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+
+    <section class="panel" style="margin-bottom:18px">
+      <h2>How current are the sources?</h2>
+      <p class="sub-t">Number of sources by the year of their current version. Hover a bar for the count.</p>
+      <div class="year-chart" role="img" aria-label={`Sources per year: ${yearBins.map(b => `${b.label} ${b.n}`).join(', ')}`}>
+        {yearBins.map(b => (
+          <div class="year-col" title={`${b.label}: ${b.n} sources`}>
+            <div class="col" data-h={(100 * b.n / maxYear).toFixed(1)}></div>
+            <span>{b.label === `<${START}` ? b.label : `'${b.label.slice(2)}`}</span>
+          </div>
+        ))}
+      </div>
+      <details style="margin-top:10px;font-size:13px;color:var(--muted)"><summary>Show as a table</summary>
+        <table style="margin-top:8px;border-collapse:collapse">{yearBins.map(b => <tr><td style="padding:2px 12px 2px 0">{b.label}</td><td style="text-align:right">{b.n}</td></tr>)}</table>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>Coming up for review</h2>
+      <p class="sub-t">Pages with the earliest review dates.</p>
+      <ul class="mini-list">
+        {dueSoon.map(p => <li><span>{p.icon}</span><a href={p.href}>{p.title}</a><span class="when">due {fmt(p.reviewDue)}</span></li>)}
+      </ul>
+    </section>
+    <p class="r-foot" style="text-align:center;margin-top:24px">Content synced from <a href={up.repo} target="_blank" rel="noopener">joegrafe/np-practice-resource</a>{up.sha && ` @ ${up.sha.slice(0, 7)}`}{up.syncedAt && ` on ${fmt(up.syncedAt)}`}.</p>
+  </div>
+</Base>

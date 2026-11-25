@@ -1,0 +1,26 @@
+---
+import { loadSite } from '../lib/content';
+import NavTree from './NavTree.astro';
+interface Props { currentId?: string; currentSection?: string }
+const { currentId, currentSection } = Astro.props;
+const { sections, pages } = loadSite();
+const extras = pages.filter(p => !p.parent && !p.isIndex && !sections.some(s => s.slug === p.section));
+---
+<nav class="side-nav" id="side-nav" aria-label="All sections">
+  <input class="nav-filter" type="search" placeholder="Filter topics…" aria-label="Filter topics in the menu" />
+  {sections.map(s => (
+    <details class="nav-group" open={s.slug === currentSection} style={`--c:${s.color}`} data-section={s.slug}>
+      <summary><span class="dot"></span>{s.icon} {s.title}<span class="n">{s.pages.length}</span></summary>
+      {s.index && (
+        <ul class="nav-list"><li><a href={s.index.href} aria-current={s.index.id === currentId ? 'page' : undefined}>Overview</a></li></ul>
+      )}
+      {s.index && <NavTree pages={s.index.children} current={currentId} />}
+    </details>
+  ))}
+  {extras.length > 0 && (
+    <details class="nav-group" style="--c:#64748b" data-section="more">
+      <summary><span class="dot"></span>✨ More<span class="n">{extras.length}</span></summary>
+      <NavTree pages={extras} current={currentId} />
+    </details>
+  )}
+</nav>

@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import ResearchPanel from '../components/ResearchPanel.astro';
+import { loadSite, sectionMeta, type Page } from '../lib/content';
+
+export function getStaticPaths() {
+  const { pages } = loadSite();
+  return pages.map(p => ({ params: { slug: p.id }, props: { id: p.id } }));
+}
+
+const { id } = Astro.props as { id: string };
+const { byId, sections } = loadSite();
+const page = byId.get(id)!;
+const sec = sections.find(s => s.slug === page.section);
+const color = sectionMeta[page.section]?.color ?? '#5b5bd6';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const fmtDate = (d: string) => { const t = Date.parse(d); return isNaN(t) ? '' : new Date(t).toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric' }); };
+const years = page.entries.map(e => e.year).filter((y): y is number => !!y);
+const newest = years.length ? Math.max(...years) : null;
+const pdfs = page.entries.filter(e => e.pdf).length;
+const links = page.entries.filter(e => e.url || e.pdf).length;
+
+// Siblings for "related" and prev/next.
+const siblings: Page[] = page.parent ? page.parent.children.filter(c => !c.isIndex) : [];
+const idx = siblings.findIndex(s => s.id === page.id);
+const prev = idx > 0 ? siblings[idx - 1] : undefined;
+const next = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : undefined;
+const related = siblings.filter(s => s.id !== page.id).slice(0, 8);
+const showPanel = !page.isIndex && page.section !== 'about';
+const hasSheet = page.entries.length > 0;
+---
+<Base title={page.title} description={page.description || page.intro.slice(0, 160)} currentId={page.id} section={page.section} panel={showPanel}>
+  <div class={page.isIndex ? 'wide' : 'content-wrap'} data-page-id={page.id} data-page-title={page.title} data-page-href={page.href} data-page-icon={page.icon} data-page-section={sec?.title}>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={base}>Home</a>
+      {page.crumbs.map(c => (<><span aria-hidden="true">/</span><a href={c.href}>{c.title}</a></>))}
+    </nav>
+
+    <header class="page-hero" style={`--c:${color}`}>
+      {page.logo && <img class="page-logo" src={page.logo} alt="" />}
+      <div class="eyebrow">{page.icon} {page.isIndex ? 'Section' : (page.system ? page.system.replace(/-/g, ' ') : sec?.title)}</div>
+      <h1>{page.title}</h1>
+      {page.intro && <p class="lede">{page.intro}</p>}
+      <div class="meta-row">
+        {page.lastReviewed && <span class="pill">Reviewed <b>{fmtDate(page.lastReviewed)}</b></span>}
+        {links > 0 && <span class="pill"><b>{links}</b> sources</span>}
+        {pdfs > 0 && <span class="pill"><b>{pdfs}</b> PDFs</span>}
+        {newest && <span class="pill">Newest <b>{newest}</b></span>}
+        {page.isIndex && <span class="pill"><b>{page.children.length}</b> topics</span>}
+        {page.region && <span class="pill">For <b>{page.region}</b> only</span>}
+        {!page.isIndex && <button class="pill bookmark-btn" id="bookmark-btn" aria-pressed="false" style="cursor:pointer">☆ Save</button>}
+      </div>
+    </header>
+
+    {page.isIndex ? (
+      <>
+        <div class="grid stagger">
+          {page.children.map(c => (
+            <a class="card" href={c.href} style={`--c:${color}`}>
+              <div class="ic">{c.icon}</div>
+              <h3>{c.title}</h3>
+              <p>{c.description || c.intro}</p>
+              {c.isIndex && c.children.length > 0 && (
+                <ul class="kids">{c.children.slice(0, 5).map(k => <li>· {k.title}</li>)}{c.children.length > 5 && <li>+ {c.children.length - 5} more</li>}</ul>
+              )}
+              <div class="foot">{c.isIndex ? `${c.children.length} topics` : `${c.entries.length || ''}${c.entries.length ? ' sources' : ''}`}</div>
+            </a>
+          ))}
+        </div>
+        <div class="prose" set:html={page.html} />
+      </>
+    ) : (
+      <>
+        {page.headings.filter(h => h.level === 2).length > 1 && (
+          <nav class="toc" aria-label="On this page">
+            {page.headings.filter(h => h.level === 2).map(h => <a href={`#${h.id}`}>{h.text}{h.count > 0 && <span class="c">{h.count}</span>}</a>)}
+          </nav>
+        )}
+        {hasSheet && (
+          <label class="page-filter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="search" id="page-filter" placeholder={`Filter this page, e.g. PDF, 2025, pediatric`} aria-label="Filter this page" />
+            <span class="hits" id="page-filter-hits"></span>
+          </label>
+        )}
+        <article class="prose" set:html={page.html} />
+
+        {related.length > 0 && (
+          <section>
+            <div class="section-title"><h2>Also in {page.parent?.title}</h2></div>
+            <div class="grid stagger">
+              {related.map(r => (
+                <a class="card" href={r.href} style={`--c:${color}`}><div class="ic">{r.icon}</div><h3>{r.title}</h3><div class="foot">{r.entries.length} sources</div></a>
+              ))}
+            </div>
+          </section>
+        )}
+        {(prev || next) && (
+          <nav class="grid" style="margin-top:22px" aria-label="Previous and next">
+            {prev ? <a class="card" href={prev.href}><div class="foot">← Previous</div><h3>{prev.title}</h3></a> : <span></span>}
+            {next && <a class="card" href={next.href} style="text-align:right"><div class="foot" style="justify-content:flex-end">Next →</div><h3>{next.title}</h3></a>}
+          </nav>
+        )}
+      </>
+    )}
+    <p class="r-foot" style="margin-top:30px">Original page: <a href={`https://github.com/joegrafe/np-practice-resource/blob/main/docs/${page.file.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener">view on GitHub</a> · Content © NPPR.ca contributors, CC BY 4.0.</p>
+  </div>
+  {showPanel && <ResearchPanel page={page} slot="panel" />}
+</Base>
