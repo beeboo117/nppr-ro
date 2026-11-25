@@ -64,6 +64,14 @@ function currentRegion(): string {
   return store.get('nppr-region', 'BC');
 }
 function applyRegion(code: string) {
+  document.documentElement.dataset.region = code;
+  // Put the picked region's own sources first in every list (BC keeps the sheet's order).
+  for (const ul of $$('.prose ul.items')) {
+    const kids = Array.from(ul.children) as HTMLElement[];
+    kids.forEach((k, i) => { if (!k.dataset.ord) k.dataset.ord = String(i); });
+    const rank = (k: HTMLElement) => (code !== 'BC' && k.dataset.region === code ? 0 : 1);
+    kids.sort((a, b) => rank(a) - rank(b) || Number(a.dataset.ord) - Number(b.dataset.ord)).forEach(k => ul.appendChild(k));
+  }
   for (const el of $$('[data-only]')) {
     const only = el.dataset.only, rg = el.dataset.region;
     const hide = (only === 'yes' && rg !== code) || (only === 'other' && rg === code);

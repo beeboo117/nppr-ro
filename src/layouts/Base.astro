@@ -9,7 +9,7 @@ interface Props { title: string; description?: string; currentId?: string; secti
 const { title, description = 'A redesigned, interactive way to browse the NP Practice Resource (NPPR.ca).', currentId, section, panel = false, nav = true } = Astro.props;
 const { sections } = loadSite();
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-const regions = getRegions().filter(r => r.live && r.code.length === 2 && r.code !== 'CA');
+const regions = getRegions().filter(r => (r.live || r.code === 'AB') && r.code.length === 2 && r.code !== 'CA');
 ---
 <!doctype html>
 <html lang="en">

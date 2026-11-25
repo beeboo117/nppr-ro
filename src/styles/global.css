@@ -348,3 +348,12 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 ::view-transition-new(main-content) { animation: 260ms cubic-bezier(.2,.8,.2,1) both vt-in; }
 @keyframes vt-out { to { opacity: 0; transform: translateY(-6px); } }
 @keyframes vt-in { from { opacity: 0; transform: translateY(10px); } }
+
+/* ---------- region mode ---------- */
+:root[data-region="AB"] .chip.rg[data-rg="AB"],
+:root[data-region="ON"] .chip.rg[data-rg="ON"],
+:root[data-region="BC"] .chip.rg[data-rg="BC"] { background: var(--accent); color: #fff; }
+.region-box { border: 1.5px solid color-mix(in srgb, var(--accent) 45%, var(--border)); background: linear-gradient(180deg, var(--accent-soft), var(--surface) 140px); }
+.region-box details.ess { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 10px; }
+.region-box details.ess > summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--accent); }
+.region-box details.ess[open] > summary { margin-bottom: 4px; }

@@ -21,7 +21,7 @@ export interface Entry {
   note: string; kind: string; heading: string; publisher: string; keywords: string;
 }
 
-export interface Heading { id: string; text: string; level: number; count: number }
+export interface Heading { id: string; text: string; level: number; count: number; region?: string }
 
 export interface Page {
   id: string;            // url path without base, e.g. conditions/cardiovascular/chest-pain
@@ -69,7 +69,8 @@ const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&am
 
 function readCsv(file: string): Record<string, string>[] {
   if (!existsSync(file)) return [];
-  return parseCsv(readFileSync(file, 'utf8'), { columns: true, skip_empty_lines: true, relax_column_count: true, bom: true });
+  // Upstream sheets mix CRLF and LF line endings; normalise so rows don't merge.
+  return parseCsv(readFileSync(file, 'utf8').replace(/\r\n?/g, '\n'), { columns: true, skip_empty_lines: true, relax_column_count: true, bom: true });
 }
 
 function splitFrontmatter(src: string): { data: any; body: string } {
@@ -418,8 +419,54 @@ export function loadSite() {
     p.icon = FOLDER_ICONS[own] || FOLDER_ICONS[segs[1]] || SECTION_META[p.section]?.icon || '📄';
   }
 
+  applyRegionOverlays(pages);
   cache = { pages, sections, byId };
   return cache;
+}
+
+// ---------- region overlays (kept in this repo, never in the upstream content) ----------
+const OVERLAY_SECTIONS = new Set(['conditions', 'populations', 'assessments', 'prescribing', 'practice', 'procedures']);
+
+function applyRegionOverlays(pages: Page[]) {
+  const dataDir = resolve('data/alberta');
+  if (!existsSync(dataDir)) return;
+  const reg = getRegistry();
+  const md = new Marked({ gfm: true });
+  // Alberta pathways, with their links and years, come from the upstream Alberta Primary Care Pathways sheet.
+  const sheet = readCsv(join(DOCS, '1 Approaches', 'Alberta Primary Care Pathways.csv'));
+  const byTitle = new Map<string, any>();
+  for (const raw of sheet as any[]) {
+    const src = raw.source ? reg.get(raw.source) : undefined;
+    const pick = (k: string) => (raw[k] === '-' ? '' : raw[k] || (src as any)?.[k] || '');
+    const title = raw.title || src?.title || '';
+    byTitle.set(title.trim().toLowerCase(), { title, url: pick('url'), pdf: pick('pdf'), year: yearOf(pick('year')), region: 'AB', note: raw.note || '', links: '' });
+  }
+  const byPage = new Map<string, any[]>();
+  for (const m of readCsv(join(dataDir, 'pathways.csv'))) {
+    const row = byTitle.get(m.pathway.trim().toLowerCase());
+    if (!row) { console.warn(`[alberta] pathway not found in upstream sheet: "${m.pathway}"`); continue; }
+    const list = byPage.get(m.page) || []; list.push(row); byPage.set(m.page, list);
+  }
+  const ess = readCsv(join(dataDir, 'essentials.csv'));
+  const groups = [...new Set(ess.map(e => e.group))];
+  const essHtml = groups.map(g => `<div class="sub-sec"><h3>${esc(g)}</h3><ul class="items">${ess.filter(e => e.group === g).map(e =>
+    `<li class="item" data-region="AB">${renderLine({ title: e.title, url: e.url, note: e.note, region: '', year: null, pdf: '', links: '' }, md, {})}</li>`).join('')}</ul></div>`).join('');
+
+  for (const p of pages) {
+    if (p.isIndex || !OVERLAY_SECTIONS.has(p.section)) continue;
+    const pw = byPage.get(p.id) || [];
+    const hasSheet = p.html.includes('class="sheet-sec');
+    if (!hasSheet && !pw.length) continue;
+    const pwHtml = pw.length ? `<div class="sub-sec"><h3>Alberta pathways for this topic</h3><ul class="items">${pw.map(r => `<li class="item" data-region="AB">${renderLine(r, md, {})}</li>`).join('')}</ul></div>` : '';
+    const box = `<section class="sheet-sec region-box" id="alberta" data-only="yes" data-region="AB">
+<h2><span>🏔️ Alberta</span>${pw.length ? `<span class="count">${pw.length}</span>` : ''}</h2>
+${pwHtml}
+<details class="ess"${pw.length ? '' : ' open'}><summary>Alberta essentials: advice, referral and prescribing</summary>${essHtml}</details>
+</section>`;
+    const i = p.html.indexOf('<section class="sheet-sec');
+    p.html = i >= 0 ? p.html.slice(0, i) + box + p.html.slice(i) : box + p.html;
+    p.headings.unshift({ id: 'alberta', text: '🏔️ Alberta', level: 2, count: pw.length, region: 'AB' });
+  }
 }
 
 export function upstreamInfo(): { repo: string; sha: string; syncedAt: string } {

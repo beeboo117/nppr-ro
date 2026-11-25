@@ -1,0 +1,84 @@
+page,pathway
+conditions/cardiovascular/atrial-fibrillation-and-anticoagulation,Atrial Fibrillation
+conditions/cardiovascular/heart-failure,Confirmed Heart Failure
+conditions/respiratory/chronic-obstructive-pulmonary-disease-copd,Chronic Obstructive Pulmonary Disease (COPD)
+conditions/respiratory/asthma,Lung Testing (ages 6 and up)
+populations/pediatrics/pediatric-asthma,Lung Testing (ages 6 and up)
+conditions/respiratory/obstructive-sleep-apnea-osa,Obstructive Sleep Apnea
+conditions/endocrine-and-metabolic/thyroid-disease,Thyroid Nodules
+conditions/endocrine-and-metabolic/thyroid-disease,Thyroid Function Assessment and Monitoring in Women of Child-Bearing Age
+populations/pregnancy-and-perinatal,Thyroid Function Assessment and Monitoring in Women of Child-Bearing Age
+conditions/renal-and-genitourinary/chronic-kidney-disease-ckd,Chronic Kidney Disease (CKD)
+conditions/renal-and-genitourinary/chronic-kidney-disease-ckd,Chronic Kidney Disease in Type 2 Diabetes
+conditions/endocrine-and-metabolic/diabetes-type-2,Chronic Kidney Disease in Type 2 Diabetes
+conditions/endocrine-and-metabolic/diabetes-type-2,Suspected Diabetic Peripheral Neuropathy
+conditions/renal-and-genitourinary/urinary-tract-infection-uti,Prevention of Recurrent Lower Urinary Tract Infection (female)
+populations/women-s-health,Female Lower Urinary Tract Symptoms (FLUTS)
+populations/women-s-health,Female Urinary Incontinence
+populations/older-adults,Female Urinary Incontinence
+populations/older-adults,Male Lower Urinary Tract Symptoms (LUTS)
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Hematuria Evaluation (bladder cancer)
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Prostate-Specific Antigen (PSA) Testing
+assessments/preventive-care-and-cancer-screening,Prostate-Specific Antigen (PSA) Testing
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Renal Mass
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,"Esophageal Cancer Prevention, Screening and Diagnosis"
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,"Gastric Cancer Prevention, Screening and Diagnosis"
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,High-Risk Rectal Bleeding
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Liver Mass
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Pancreaticobiliary Mass
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Head and Neck Cancer Diagnosis and Referral
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Lymphadenopathy / Lymph Node Assessment
+conditions/hematology-and-oncology/suspected-cancer-in-primary-care,Iron Deficiency Anemia (high risk for colorectal cancer)
+conditions/gastrointestinal-and-liver/irritable-bowel-syndrome-ibs,Irritable Bowel Syndrome (IBS)
+conditions/gastrointestinal-and-liver/irritable-bowel-syndrome-ibs,Chronic Abdominal Pain
+conditions/gastrointestinal-and-liver/irritable-bowel-syndrome-ibs,Chronic Constipation
+conditions/gastrointestinal-and-liver/irritable-bowel-syndrome-ibs,Chronic Diarrhea
+conditions/gastrointestinal-and-liver/irritable-bowel-syndrome-ibs,Celiac Disease
+conditions/gastrointestinal-and-liver/dyspepsia-gerd-and-h-pylori,Dyspepsia
+conditions/gastrointestinal-and-liver/dyspepsia-gerd-and-h-pylori,Gastroesophageal Reflux Disease (GERD)
+conditions/gastrointestinal-and-liver/dyspepsia-gerd-and-h-pylori,Helicobacter pylori
+conditions/gastrointestinal-and-liver/abnormal-liver-tests-and-masld,Non-Alcoholic Fatty Liver Disease (NAFLD)
+conditions/gastrointestinal-and-liver/abnormal-liver-tests-and-masld,Cirrhosis Care (interactive)
+conditions/gastrointestinal-and-liver/abnormal-liver-tests-and-masld,Hepatitis B
+conditions/gastrointestinal-and-liver/abnormal-liver-tests-and-masld,Hepatitis C
+conditions/gastrointestinal-and-liver/abnormal-liver-tests-and-masld,Liver Mass
+conditions/musculoskeletal/gout,Gout
+conditions/musculoskeletal/osteoarthritis-oa,Hand and Wrist Osteoarthritis
+conditions/musculoskeletal/osteoarthritis-oa,Knee
+conditions/musculoskeletal/osteoarthritis-oa,Peripheral Arthritis
+conditions/musculoskeletal/rheumatoid-arthritis,Peripheral Arthritis
+conditions/musculoskeletal/low-back-pain,Spine: Low Back
+conditions/musculoskeletal/chronic-pain,Fibromyalgia
+conditions/musculoskeletal/sprains-and-minor-fractures,Knee
+conditions/musculoskeletal/sprains-and-minor-fractures,Shoulder
+assessments/physical-exam-by-system/musculoskeletal-exam,Knee
+assessments/physical-exam-by-system/musculoskeletal-exam,Shoulder
+procedures/joint-injections-splints-and-reductions,Shoulder
+procedures/joint-injections-splints-and-reductions,Carpal Tunnel Syndrome
+procedures/joint-injections-splints-and-reductions,Trigger Finger
+conditions/neurology/concussion-and-mild-traumatic-brain-injury-mtbi,Acute Concussion
+conditions/neurology/concussion-and-mild-traumatic-brain-injury-mtbi,Persisting Post-Concussion Symptoms
+conditions/neurology/headache-and-migraine,Headache and Migraine
+conditions/neurology/headache-and-migraine,Giant Cell Arteritis
+conditions/mental-health-and-substance-use/alcohol-use-disorder-aud,Alcohol Use Disorder
+conditions/mental-health-and-substance-use/depression-and-anxiety,Anxiety
+conditions/mental-health-and-substance-use/depression-and-anxiety,Difficult to Treat Depression
+conditions/mental-health-and-substance-use/tobacco-use-disorder-tud,Tobacco and Nicotine Dependence
+prescribing/immunization,Measles
+conditions/hematology-and-oncology/iron-deficiency-anemia,Iron Deficiency Anemia (adult)
+conditions/hematology-and-oncology/iron-deficiency-anemia,Iron Deficiency Anemia (high risk for colorectal cancer)
+populations/palliative-care,One-carepath: Integrating Supportive Care
+conditions/infectious-disease/respiratory-tract-infections,Rhinosinusitis
+conditions/eyes-ears-nose-and-throat/allergic-rhinitis,Rhinosinusitis
+populations/women-s-health,Abnormal Uterine Bleeding
+populations/women-s-health,Post-Menopausal Bleeding
+populations/women-s-health,Polyendocrine Metabolic Ovarian Syndrome (PMOS)
+conditions/sexual-and-reproductive-health/menopause,Menopause and Perimenopause
+conditions/sexual-and-reproductive-health/menopause,Post-Menopausal Bleeding
+populations/pregnancy-and-perinatal,Bleeding After Pregnancy
+populations/trans-care,Gender-Affirming Care
+populations/pediatrics/pediatrics,Adolescent Abnormal Uterine Bleeding
+populations/pediatrics/pediatrics,Autism in Infants and Young Children
+populations/pediatrics/pediatrics,Pediatric Abdominal Pain
+populations/pediatrics/pediatrics,Pediatric Constipation
+populations/pediatrics/pediatrics,Pediatric Non-Alcoholic Fatty Liver Disease (NAFLD)
