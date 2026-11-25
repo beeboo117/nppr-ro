@@ -131,7 +131,7 @@ h1 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); line-h
 .page-logo { height: 40px; width: auto; margin-bottom: 4px; }
 
 /* on-page contents */
-.toc { display: flex; gap: 6px; flex-wrap: wrap; margin: 18px 0 8px; position: sticky; top: calc(var(--header-h) + 6px); z-index: 5; padding: 8px; border-radius: 14px; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); }
+.toc { display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; margin: 18px 0 8px; position: sticky; top: calc(var(--header-h) + 6px); z-index: 5; padding: 8px; border-radius: 14px; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); }
 .toc a { font-size: 13px; padding: 5px 11px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); color: var(--muted); white-space: nowrap; transition: all .2s; }
 .toc a:hover, .toc a.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
 .toc a .c { font-size: 11px; color: var(--faint); margin-left: 4px; }
@@ -398,3 +398,5 @@ select.aud { font-weight: 600; }
 
 .sheet-sec[data-empty="yes"], .toc a[data-empty="yes"] { display: none !important; }
 @media (max-width: 430px) { .brand-short { display: none !important; } }
+
+.toc::-webkit-scrollbar { display: none; }

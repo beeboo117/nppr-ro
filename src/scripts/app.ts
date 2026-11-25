@@ -188,7 +188,12 @@ function initToc() {
     for (const en of entries) if (en.isIntersecting) {
       links.forEach(l => l.classList.remove('active'));
       const a = map.get(en.target.id); a?.classList.add('active');
-      a?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      // Keep the active chip visible by scrolling only the contents bar sideways, never the page.
+      const bar = a?.parentElement;
+      if (a && bar && bar.scrollWidth > bar.clientWidth) {
+        const left = a.offsetLeft - bar.clientWidth / 2 + a.offsetWidth / 2;
+        bar.scrollTo({ left, behavior: reduceMotion() ? 'auto' : 'smooth' });
+      }
     }
   }, { rootMargin: '-30% 0px -60% 0px' });
   map.forEach((_a, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
