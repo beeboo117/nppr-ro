@@ -98,7 +98,7 @@ const srcCount = (p: Page) => p.entries.filter(e => e.url || e.pdf).length;
       <>
         {page.headings.filter(h => h.level === 2).length > 1 && (
           <nav class="toc" aria-label="On this page">
-            {page.headings.filter(h => h.level === 2).map(h => <a href={`#${h.id}`} data-only={h.region ? 'yes' : undefined} data-region={h.region}>{h.text}{h.count > 0 && <span class="c">{h.count}</span>}</a>)}
+            {page.headings.filter(h => h.level === 2).map(h => <a href={`#${h.id}`} data-only={h.region ? 'yes' : undefined} data-region={h.region} data-aud={h.aud}>{h.text}{h.count > 0 && <span class="c">{h.count}</span>}</a>)}
           </nav>
         )}
         {hasSheet && (

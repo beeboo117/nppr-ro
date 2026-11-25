@@ -25,7 +25,7 @@ export interface Entry {
 // One rendered row of a list sheet, kept so pages can be rebuilt from other pages' rows (e.g. prescribing by system).
 export interface SheetRow { heading: string; level: number; kind: string; key: string; attrs: string; html: string; note: string; text: string; entry?: Entry }
 
-export interface Heading { id: string; text: string; level: number; count: number; region?: string }
+export interface Heading { id: string; text: string; level: number; count: number; region?: string; aud?: string }
 
 export interface Page {
   id: string;            // url path without base, e.g. conditions/cardiovascular/chest-pain
@@ -223,8 +223,15 @@ export function renderLine(r: any, md: Marked, opts: { dash?: boolean }) {
   return `<span class="line-main">${link}${chips.join('')}</span>${links}${note}`;
 }
 
+// Rows only nurse practitioners need (nursing regulators, NP associations, NP-only notes).
+// Physician mode hides them; data/medicine/resources.csv adds physician equivalents.
+const NP_RE = /\b(BCCNM|CNO|CRNA|NNPBC|NPAO|CNPS|NPAC|Canadian Nurses|College of Nurses|Nurses and Nurse Practitioners|nurse practitioners?|NPs?|nursing)\b|bccnm\.ca|nnpbc\.com|npao\.org|cno\.org|nurses\.ab\.ca|cnps\.ca/i;
+const NOT_NP = /physician|doctor|\bMDs?\b|family medicine|prescribers|clinicians|plan np|pharmacare|hartford|guidelines for nurses|minute preceptor|preceptor model/i;
+export const NP_HEADING = /\bNPs?\b|\bnurses?\b|nursing|\b(BCCNM|CNO|NNPBC|NPAO|CRNA)\b|bccnm\.ca|cno\.org/i;
+export const isNpOnly = (head: string, own: string, note: string) => NP_HEADING.test(head) || (NP_RE.test(own) && !NOT_NP.test(own));
+
 export function rowAttrs(r: any) {
-  return ` data-region="${esc(r.region || '')}"${r.only ? ` data-only="${esc(r.only)}"` : ''} data-text="${esc((r.title + ' ' + r.note + ' ' + r.keywords + ' ' + r.publisher).toLowerCase())}"`;
+  return `${r.aud ? ` data-aud="${r.aud}"` : ''} data-region="${esc(r.region || '')}"${r.only ? ` data-only="${esc(r.only)}"` : ''} data-text="${esc((r.title + ' ' + r.note + ' ' + r.keywords + ' ' + r.publisher).toLowerCase())}"`;
 }
 
 interface SheetResult { html: string; headings: Heading[]; entries: Entry[]; rows: SheetRow[] }
@@ -240,10 +247,21 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
       title: pick('title'), url: pick('url'), pdf: pick('pdf'), year: yearOf(pick('year')),
       links: blank(raw.links), note: blank(raw.note), keywords: [raw.keywords, src?.keywords].filter(Boolean).join(' '),
       region: pick('region'), only: raw.only || '', publisher: src?.publisher || '', srcKind: src?.kind || '', source: raw.source || '',
+      aud: '',
     };
   });
 
+  for (const r of rows) if (isNpOnly(r.heading, `${r.title} ${r.publisher} ${r.source} ${r.url} ${r.links}`, r.note)) r.aud = 'np';
+  // A section is NP-only when its heading says so or every row in it is.
+  const npSections = new Set<string>();
+  for (const h of new Set(rows.map(r => r.heading))) {
+    const rs = rows.filter(r => r.heading === h && (r.title || r.url));
+    if (h && (NP_HEADING.test(h) || (rs.length && rs.every(r => r.aud === 'np')))) npSections.add(h);
+  }
+
   // Inherit region for sub-rows from their parent.
+  let lastAud = '';
+  for (const r of rows) { if (r.level === 0) lastAud = r.aud; else if (!r.aud && lastAud) r.aud = lastAud; }
   let lastTopRegion = '';
   for (const r of rows) { if (r.level === 0) lastTopRegion = r.region; else if (!r.region) r.region = lastTopRegion; }
 
@@ -269,8 +287,9 @@ function renderSheet(csvFile: string, md: Marked, opts: { counts?: boolean; dash
       if (curH) {
         const id = slugify(curH);
         const n = counts.get(curH) || 0;
-        headings.push({ id, text: curH, level: 2, count: n });
-        out.push(`<section class="sheet-sec reveal" id="${id}"><h2><span>${esc(curH)}</span>${n ? `<span class="count">${n}</span>` : ''}</h2>`);
+        const aud = npSections.has(curH) ? 'np' : undefined;
+        headings.push({ id, text: curH, level: 2, count: n, aud });
+        out.push(`<section class="sheet-sec reveal" id="${id}"${aud ? ' data-aud="np"' : ''}><h2><span>${esc(curH)}</span>${n ? `<span class="count">${n}</span>` : ''}</h2>`);
         sectionOpen = true;
       }
     }
@@ -456,6 +475,7 @@ export function loadSite() {
   }
 
   applyRegionOverlays(pages);
+  applyMedicineOverlay(pages);
   cache = { pages, sections, byId };
   return cache;
 }
@@ -511,6 +531,43 @@ ${pwHtml}${trHtml}
     const i = p.html.indexOf('<section class="sheet-sec');
     p.html = i >= 0 ? p.html.slice(0, i) + box + p.html.slice(i) : box + p.html;
     p.headings.unshift({ id: 'alberta', text: '🏔️ Alberta', level: 2, count: n, region: 'AB' });
+  }
+}
+
+// ---------- physician resources (kept in this repo, never upstream) ----------
+function applyMedicineOverlay(pages: Page[]) {
+  const rows = readCsv(resolve('data/medicine/resources.csv'));
+  if (!rows.length) return;
+  const byId = new Map(pages.map(p => [p.id, p]));
+  for (const m of rows) {
+    const p = byId.get(m.page);
+    if (!p) { console.warn(`[medicine] page not found: ${m.page}`); continue; }
+    const r = { title: m.title, url: m.url, pdf: /\.pdf($|\?)/i.test(m.url) ? m.url : '', year: null, region: m.region || '', note: m.note || '', links: '', keywords: 'physician', publisher: '', only: '', aud: 'md' };
+    const li = `<li class="item"${rowAttrs(r)}>${renderLine(r, plainMd, {})}</li>`;
+    const id = slugify(m.heading || '');
+    const start = id ? p.html.indexOf(`<section class="sheet-sec reveal" id="${id}"`) : -1;
+    const ul = start >= 0 ? p.html.indexOf('<ul class="items">', start) : -1;
+    const end = start >= 0 ? p.html.indexOf('</section>', start) : -1;
+    if (ul >= 0 && ul < end) {
+      const at = ul + '<ul class="items">'.length;
+      p.html = p.html.slice(0, at) + li + p.html.slice(at);
+      // The section now serves physicians too.
+      const tagEnd = p.html.indexOf('>', start);
+      p.html = p.html.slice(0, start) + p.html.slice(start, tagEnd).replace(' data-aud="np"', '') + p.html.slice(tagEnd);
+      const h = p.headings.find(x => x.id === id); if (h) h.aud = undefined;
+    } else {
+      // No matching list: one "For physicians" section at the top of the sheet.
+      const sid = 'for-physicians';
+      const si = p.html.indexOf(`id="${sid}"`);
+      if (si >= 0) { const at = p.html.indexOf('<ul class="items">', si) + '<ul class="items">'.length; p.html = p.html.slice(0, at) + li + p.html.slice(at); }
+      else {
+        const box = `<section class="sheet-sec reveal" id="${sid}" data-aud="md"><h2><span>For physicians</span></h2><ul class="items">${li}</ul></section>`;
+        const i = p.html.indexOf('<section class="sheet-sec');
+        p.html = i >= 0 ? p.html.slice(0, i) + box + p.html.slice(i) : p.html + box;
+        p.headings.unshift({ id: sid, text: 'For physicians', level: 2, count: 0, aud: 'md' });
+      }
+    }
+    p.entries.push({ title: m.title, url: m.url, pdf: r.pdf, year: null, region: r.region, only: '', note: r.note, kind: 'physician', heading: m.heading, publisher: '', keywords: 'physician' });
   }
 }
 

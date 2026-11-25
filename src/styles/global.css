@@ -390,3 +390,11 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .rx-used { margin: 10px 0 0; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .chip-link { font-size: 12px; padding: 2px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 .chip-link:hover { background: var(--accent); color: #fff; }
+
+/* ---------- audience switch: MD/DO (default) or NP ---------- */
+:root[data-aud="md"] [data-aud="np"], :root[data-aud="np"] [data-aud="md"],
+:root:not([data-aud]) [data-aud="np"] { display: none !important; }
+select.aud { font-weight: 600; }
+
+.sheet-sec[data-empty="yes"], .toc a[data-empty="yes"] { display: none !important; }
+@media (max-width: 430px) { .brand-short { display: none !important; } }

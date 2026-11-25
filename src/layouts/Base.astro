@@ -26,6 +26,7 @@ const regions = getRegions().filter(r => (r.live || r.code === 'AB') && r.code.l
   <script is:inline>
     document.documentElement.classList.add('js');
     try { const t = localStorage.getItem('nppr-theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+    try { document.documentElement.dataset.aud = JSON.parse(localStorage.getItem('nppr-aud') || '"md"') === 'np' ? 'np' : 'md'; } catch { document.documentElement.dataset.aud = 'md'; }
   </script>
   <ClientRouter />
 </head>
@@ -47,6 +48,10 @@ const regions = getRegions().filter(r => (r.live || r.code === 'AB') && r.code.l
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <span class="lbl">Search</span><kbd>Ctrl K</kbd>
       </button>
+      <select class="region aud" id="aud" aria-label="Show resources for" title="Show resources for physicians or nurse practitioners">
+        <option value="md">MD/DO</option>
+        <option value="np">NP</option>
+      </select>
       <select class="region" id="region" aria-label="Your province">
         {regions.map(r => <option value={r.code} title={r.name}>{r.code}</option>)}
       </select>

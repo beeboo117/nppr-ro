@@ -18,6 +18,7 @@ export function boot() {
   bindGlobalsOnce();
   initTheme();
   initRegion();
+  initAudience();
   initNav();
   initReveal();
   initProgress();
@@ -78,14 +79,39 @@ function applyRegion(code: string) {
     if (hide) el.dataset.hidden = 'region'; else if (el.dataset.hidden === 'region') delete el.dataset.hidden;
   }
 }
+// Hide sheet sections (and their contents links) left with nothing to show after the province or audience filter.
+function syncSections() {
+  for (const sec of $$('.prose .sheet-sec')) {
+    sec.removeAttribute('data-empty');
+    const rows = $$(':scope > ul.items > li, :scope > .sub-sec > ul.items > li, :scope .md-row, :scope .sheet-note, :scope .rx-tiles', sec);
+    const empty = rows.length > 0 && !rows.some(r => r.offsetParent !== null);
+    if (empty) sec.dataset.empty = 'yes';
+    const link = $(`.toc a[href="#${sec.id}"]`);
+    if (link) { if (empty) link.dataset.empty = 'yes'; else link.removeAttribute('data-empty'); }
+  }
+}
 function initRegion() {
   const sel = $<HTMLSelectElement>('#region');
   const code = currentRegion();
   if (sel) {
     sel.value = [...sel.options].some(o => o.value === code) ? code : 'BC';
-    sel.onchange = () => { store.set('nppr-region', sel.value); applyRegion(sel.value); };
+    sel.onchange = () => { store.set('nppr-region', sel.value); applyRegion(sel.value); syncSections(); };
   }
   applyRegion(code);
+}
+
+// ---------------- audience: physicians (default) or nurse practitioners ----------------
+function initAudience() {
+  const sel = $<HTMLSelectElement>('#aud');
+  const q = new URLSearchParams(location.search).get('for');
+  if (q === 'np' || q === 'md') store.set('nppr-aud', q);
+  const aud = store.get('nppr-aud', 'md') === 'np' ? 'np' : 'md';
+  document.documentElement.dataset.aud = aud;
+  if (sel) {
+    sel.value = aud;
+    sel.onchange = () => { store.set('nppr-aud', sel.value); document.documentElement.dataset.aud = sel.value; syncSections(); };
+  }
+  syncSections();
 }
 
 // ---------------- side nav & drawers ----------------
