@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import { BRAND } from '../lib/brand';
 import { loadSite, getRegistry, upstreamInfo } from '../lib/content';
 
 const { pages, sections } = loadSite();
@@ -46,17 +45,11 @@ const up = upstreamInfo();
 <Base title="Home" nav={false}>
   <div class="wide">
     <section class="hero">
-      <span class="blob" style="width:300px;height:300px;background:#f0abfc;top:-80px;right:10%"></span>
-      <span class="blob" style="width:220px;height:220px;background:#67e8f9;bottom:-60px;left:20%;animation-delay:-6s"></span>
-      <div style="position:relative">
-        <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85">{BRAND.name} · {BRAND.tagline}</div>
-        <h1>Find the right guideline, fast.</h1>
-        <p>Current guidelines for every primary care visit, for NPs, MDs and DOs. Built on NPPR.ca, now with a live research sidebar, quick search and a dashboard of what's new and current.</p>
-        <button class="hero-search" data-open-palette>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          Search {topics.length} topics and {reg.length.toLocaleString()} sources…<kbd>Ctrl K</kbd>
-        </button>
-      </div>
+      <h1>Find the right guideline, fast.</h1>
+      <button class="hero-search" data-open-palette>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        Search {topics.length} topics and {reg.length.toLocaleString()} sources…<kbd>Ctrl K</kbd>
+      </button>
     </section>
 
     <div class="stats stagger">
