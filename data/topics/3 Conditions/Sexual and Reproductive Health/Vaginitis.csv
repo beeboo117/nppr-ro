@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Public Health Agency of Canada - STI-associated syndromes,https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes.html,2026,,,Canadian STBBI guide; includes vaginal discharge,vaginal discharge syndrome,CA,,
+Key Sources,,,CMAJ - Five things to know about bacterial vaginosis,,,,,Canadian,BV,CA,,cmaj-5t-bacterial-vaginosis-2024
+Key Sources,,,CMAJ - Five things to know about vaginal trichomoniasis,,,,,Canadian,trichomoniasis,CA,,cmaj-5t-vaginal-trichomoniasis-2022
+Further Resources,,,AAFP - Vaginitis: Diagnosis and Treatment,https://www.aafp.org/afp/2018/0301/p321,2018,,,"International source: US review, not Canadian",diagnosis treatment,INTL,,
+Further Resources,,,CMAJ - Five things to know about prepubertal vulvovaginitis,,,,,Canadian,children,CA,,cmaj-5t-prepubertal-vulvovaginitis-2018
+Further Resources,md,,- STI testing — *see [Sexually Transmitted Infections (STI)](Sexually%20Transmitted%20Infections%20%28STI%29.md)*,,,,,,,,,
+Further Resources,md,,- Atrophic vaginitis — *see [Menopause](Menopause.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Obstetrics / Gynecology,https://pathwaysbc.ca/specialties/22,,,,"login; specialists and clinics, with referral details","Pathways, Obstetrics / Gynecology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Vaginitis,https://www.healthlinkbc.ca/healthwise/vaginitis,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Bacterial Vaginosis (PDF),https://www.healthlinkbc.ca/sites/default/files/documents/healthfiles/hfile08g.pdf,,,,HealthLinkBC File 08g,BV,BC,,
+Patient Resources,,,HealthLink BC - Trichomoniasis,https://www.healthlinkbc.ca/healthlinkbc-files/trichomoniasis,,,,,trichomoniasis,BC,,

@@ -1,0 +1,18 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,AAFP - Peripheral Neuropathy: Evaluation and Differential Diagnosis,https://www.aafp.org/afp/2020/1215/p732,2020,,,"International source: US review, not Canadian",evaluation differential,INTL,,
+Key Sources,,,CMAJ - Five things to know about distal symmetric diabetic neuropathy,,,,,Canadian,diabetic,CA,,cmaj-5t-distal-symmetric-diabetic-neuropathy-2026
+Key Sources,,,Diabetes Canada - Neuropathy,https://www.diabetes.ca/for-professionals/full-guidelines/chapter-31,,,,Canadian; screening and treatment in diabetes,diabetes,CA,,
+Algorithms and Pathways,,,,,,,,Primary Care Alberta pathway,diabetic neuropathy pathway,CA,,ab-pathway-hub-diabetic-neuropathy
+Assessment Tools and Calculators,,,,,,,,,monofilament,CA,,diabetes-canada-appendix-11a
+Assessment Tools and Calculators,,,,,,,,B12 deficiency as a cause,B12,BC,,bc-gpac-b12-folate-2023
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Peripheral weakness: sensory changes,https://blackbook.ucalgary.ca/schemes/neurologic/peripheral-weakness-sensory-changes/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Peripheral weakness,https://blackbook.ucalgary.ca/schemes/neurologic/peripheral-weakness/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Mechanisms of pain,https://blackbook.ucalgary.ca/schemes/neurologic/mechanisms-of-pain/,,,,,,CA,,
+Prescribing,,,,,,,,Canadian,gabapentin pregabalin duloxetine TCA,CA,,cps-neuropathic-pain-2014
+Prescribing,,,,,,,,BC academic detailing,neuropathic pain drugs,BC,,bc-pad-neuropathic-pain-2018
+Prescribing,,,Canadian Family Physician - Pharmacologic management of chronic neuropathic pain,https://www.cfp.ca/content/63/11/844,2017,,,Canadian,neuropathic pain,CA,,
+Prescribing,,,,,,,,BC PharmaCare criteria,duloxetine coverage,BC,yes,pharmacare-sa-duloxetine
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Neurology,https://pathwaysbc.ca/specialties/14,,,[Pain Medicine](https://pathwaysbc.ca/specialties/30),"login; specialists and clinics, with referral details","Pathways, Neurology, Pain Medicine",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

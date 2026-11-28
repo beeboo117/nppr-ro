@@ -1,0 +1,23 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,AAFP - Evaluation After a First Seizure in Adults,https://www.aafp.org/afp/2022/0500/p507,2022,,,"International source: US review, not Canadian",first seizure adults,INTL,,
+Key Sources,,,CMAJ - Five things to know about antiseizure medications and pregnancy,,,,,Canadian,pregnancy valproate folic acid,CA,,cmaj-5t-antiseizure-medications-and-pregnancy-2021
+Key Sources,,,Canadian Family Physician - Reducing unnecessary investigations in pediatric simple febrile and first-episode generalized unprovoked seizures,,,,,Canadian; children with simple febrile and first unprovoked seizures,children febrile,CA,,cfp-febrile-seizures-2025
+Further Resources,,,PedsCases - Pediatric Epilepsy,https://www.pedscases.com/pediatric-epilepsy,2020,,,Canadian pediatric approach,children,CA,,
+Further Resources,,,TREKK - Bottom Line Recommendations: Status Epilepticus,,,,,Canadian pediatric emergency summary,status epilepticus,CA,,trekk-status-epilepticus-blr-2026
+Further Resources,,,"AAFP - Febrile Seizures: Risks, Evaluation, and Prognosis",https://www.aafp.org/afp/2019/0401/p445,2019,,,"International source: US review, not Canadian",febrile seizures,INTL,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Spell/seizure: epileptic seizure,https://blackbook.ucalgary.ca/schemes/neurologic/spell-seizure-epileptic-seizure/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Spell/seizure: other,https://blackbook.ucalgary.ca/schemes/neurologic/spell-seizure-other/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Spell/seizure: secondary organic,https://blackbook.ucalgary.ca/schemes/neurologic/spell-seizure-secondary-organic/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Syncope,https://blackbook.ucalgary.ca/schemes/cardiovascular/syncope/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Pediatric epilepsies,https://blackbook.ucalgary.ca/schemes/pediatric/pediatric-epilepsies/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Febrile seizures,https://blackbook.ucalgary.ca/schemes/pediatric/febrile-seizures/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Febrile seizures in young children — *see [Fever in Young Children](../../4%20Populations/Pediatrics/Fever%20in%20Young%20Children.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Neurology,https://pathwaysbc.ca/specialties/14,,,,"login; specialists and clinics, with referral details","Pathways, Neurology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Advice and Referral,,,,,,,,BC duty to report and medical fitness to drive,driving RoadSafetyBC,BC,yes,roadsafetybc-medical-prof
+Advice and Referral,,,RoadSafetyBC - CCMTA Medical Standards with B.C. Specific Guidelines,https://www2.gov.bc.ca/gov/content/transportation/driving-and-cycling/roadsafetybc/medical-fitness/medical-prof/med-standards,,,,BC driving standards by condition,driving standards,BC,yes,
+Advice and Referral,,,,,,,,Ontario mandatory reporting,driving Ontario,ON,yes,ontario-driver-medical-review
+Patient Resources,,,,,,,,,febrile seizures,BC,,healthlinkbc-febrile-seizures-fever-seizures
+Patient Resources,,,,,,,,,febrile seizures,CA,,caringforkids-febrile-seizures

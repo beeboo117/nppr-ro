@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Canadian Cardiovascular Society - 2022 Guidelines for Peripheral Arterial Disease,https://ccs.ca/guideline/2022-peripheral-arterial-disease/introduction/,2022,,,"Canadian; diagnosis, screening, risk reduction, antithrombotic therapy and when to refer",CCS PAD guideline,CA,,
+Key Sources,,,AAFP - Lower Extremity Peripheral Artery Disease: Diagnosis and Treatment,https://www.aafp.org/afp/2019/0315/p362,2019,,,"International source: US review, not Canadian",diagnosis treatment,INTL,,
+Further Resources,,,,,,,,Canadian screening recommendation,AAA screening,CA,,ctfphc-aaa-2017
+Further Resources,,,,,,,,antithrombotics when AF coexists with PAD,AF anticoagulation,BC,,bc-gpac-afib-cad-pad
+Assessment Tools and Calculators,,,,,,,,International source,ABI,INTL,,stanford-25-ankle-brachial-index
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Pulse abnormalities,https://blackbook.ucalgary.ca/schemes/cardiovascular/pulse-abnormalities/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Skin ulcer by location: lower legs / feet,https://blackbook.ucalgary.ca/schemes/dermatologic/skin-ulcer-by-location-lower-legs-feet/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Risk factor management — *see [Cardiovascular Risk and Lipids](Cardiovascular%20Risk%20and%20Lipids.md)*,,,,,,,,,
+Prescribing,md,,- Smoking cessation — *see [Tobacco Use Disorder (TUD)](../Mental%20Health%20and%20Substance%20Use/Tobacco%20Use%20Disorder%20%28TUD%29.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - General Surgery,https://pathwaysbc.ca/specialties/3,,,[Cardiology](https://pathwaysbc.ca/specialties/4),"login; specialists and clinics, with referral details","Pathways, General Surgery, Cardiology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

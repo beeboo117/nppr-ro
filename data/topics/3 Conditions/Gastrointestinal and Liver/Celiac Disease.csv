@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Alberta's Pathway Hub - Celiac Disease,https://www.primarycarealberta.ca/pathways/73/clinical,2024,,,"Primary Care Alberta pathway: testing, referral for biopsy and follow-up",tTG pathway,AB,,
+Key Sources,,,CMAJ - Five things to know about celiac disease,,,,,Canadian,,CA,,cmaj-5t-celiac-disease-2013
+Further Resources,,,Canadian Family Physician - Diagnosing celiac disease in patients with low bone mineral density or fragility fractures,https://www.cfp.ca/content/59/10/1055,2013,,,Canadian,osteoporosis fracture,CA,,
+Further Resources,,,Canadian Family Physician - Management of bone health in patients with celiac disease,https://www.cfp.ca/content/64/6/433,2018,,,Canadian,bone health,CA,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Chronic diarrhea: small bowel,https://blackbook.ucalgary.ca/schemes/gastrointestinal/chronic-diarrhea-small-bowel/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Unintentional weight loss (adults),https://blackbook.ucalgary.ca/schemes/gastrointestinal/unintentional-weight-loss-adults/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Iron deficiency — *see [Iron Deficiency Anemia](../Hematology%20and%20Oncology/Iron%20Deficiency%20Anemia.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Gastroenterology,https://pathwaysbc.ca/specialties/8,,,,"login; specialists and clinics, with referral details","Pathways, Gastroenterology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Celiac Disease,https://www.healthlinkbc.ca/healthwise/celiac-disease,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Celiac Disease: Eating a Gluten-Free Diet,https://www.healthlinkbc.ca/healthwise/celiac-disease-eating-gluten-free-diet,,,,,gluten-free diet,BC,,

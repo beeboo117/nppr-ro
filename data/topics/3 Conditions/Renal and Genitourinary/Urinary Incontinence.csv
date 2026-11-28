@@ -1,0 +1,21 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,,,,,,"Canadian; lifestyle, pelvic floor training, bladder training, pessaries and drugs for women",SOGC pelvic floor,CA,,sogc-guideline-no-397-conservative-care-of-urinary-incontine
+Key Sources,,,Centre for Effective Practice - Urinary Incontinence in Women,,,,,Ontario primary care tool: assessment and management of incontinence in women,CEP tool,ON,,cep-urinary-incontinence-2020
+Further Resources,,,Canadian Family Physician - Office management of urinary incontinence among older patients,https://www.cfp.ca/content/56/11/1115,2010,,,Canadian; older patients,older adults office management,CA,,
+Further Resources,,,CMAJ - Five things to know about stress urinary incontinence and synthetic mesh midurethral slings,,,,,Canadian; surgical options and mesh,mesh sling surgery,CA,,cmaj-5t-stress-urinary-incontinence-and-synthetic-mesh-2023
+Further Resources,,,SOGC - Guideline No. 422b: Menopause and Genitourinary Health,,,,,"Canadian; genitourinary syndrome of menopause, including bladder symptoms",GSM vaginal estrogen,CA,,sogc-422b-genitourinary-2021
+Further Resources,,,AAFP - Urinary Incontinence in Women: Evaluation and Management,https://www.aafp.org/afp/2019/0915/p339,2019,,,"International source: US review, not Canadian",women evaluation,INTL,,
+Algorithms and Pathways,,,Pathways BC - Pelvic Floor Disorders,,,,,BC enhanced care pathway (women's health),pelvic floor pathway,BC,yes,pathways-bc-pelvic-floor-disorders
+Algorithms and Pathways,,,Alberta's Pathway Hub - Female Urinary Incontinence,,,,,Primary Care Alberta pathway,female incontinence pathway,CA,,alberta-pathway-hub-female-urinary-incontinence
+Algorithms and Pathways,,,Alberta's Pathway Hub - Female Lower Urinary Tract Symptoms (FLUTS),https://www.primarycarealberta.ca/pathways/173/clinical,2026,,,Primary Care Alberta pathway,FLUTS,AB,,
+Algorithms and Pathways,,,Alberta's Pathway Hub - Male Lower Urinary Tract Symptoms (LUTS),https://www.primarycarealberta.ca/pathways/242/clinical,2025,,,Primary Care Alberta pathway; for men,male LUTS,AB,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Urinary incontinence,https://blackbook.ucalgary.ca/schemes/renal/urinary-incontinence/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Increased urinary frequency,https://blackbook.ucalgary.ca/schemes/renal/increased-urinary-frequency/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Men with LUTS — *see [Benign Prostatic Hyperplasia (BPH) and Male LUTS](Benign%20Prostatic%20Hyperplasia%20%28BPH%29%20and%20Male%20LUTS.md)*,,,,,,,,,
+Prescribing,,,,,,,,antimuscarinics and beta-3 agonists compared; the chart needs an RxFiles subscription,oxybutynin mirabegron,CA,,rxfiles-urinary-incontinence-drug-comparison-chart
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Urology,https://pathwaysbc.ca/specialties/33,,,[Obstetrics / Gynecology](https://pathwaysbc.ca/specialties/22),"login; specialists and clinics, with referral details","Pathways, Urology, Obstetrics / Gynecology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Urinary Incontinence in Women,https://www.healthlinkbc.ca/healthwise/urinary-incontinence-women,,,,,women,BC,,
+Patient Resources,,,HealthLink BC - Behavioural Methods for Urinary Incontinence,https://www.healthlinkbc.ca/healthwise/behavioural-methods-urinary-incontinence,,,,pelvic floor exercises and bladder training,Kegel bladder training,BC,,

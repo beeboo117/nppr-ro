@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,CMAJ - Five things to know about polymyalgia rheumatica,,,,,Canadian,PMR,CA,,cmaj-5t-polymyalgia-rheumatica-2021
+Key Sources,,,CMAJ - Five things to know about giant cell arteritis,,,,,Canadian; GCA threatens vision and needs same-day action,GCA,CA,,cmaj-5t-giant-cell-arteritis-2011
+Algorithms and Pathways,,,Alberta's Pathway Hub - Giant Cell Arteritis,https://www.primarycarealberta.ca/pathways/189/clinical,2025,,,Primary Care Alberta pathway,GCA pathway,AB,,
+Assessment Tools and Calculators,,,,,,,,when to order CRP and ESR,ESR CRP,BC,,bc-gpac-crp-esr-2018
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Inflammatory joint pain,https://blackbook.ucalgary.ca/schemes/musculoskeletal/inflammatory-joint-pain/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Acute vision loss: unilateral,https://blackbook.ucalgary.ca/schemes/ophthalmologic/acute-vision-loss-unilateral/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Headache: primary,https://blackbook.ucalgary.ca/schemes/neurologic/headache-primary/,,,,,,CA,,
+Prescribing,md,,- Bone protection on long-term prednisone — *see [Osteoporosis](../Endocrine%20and%20Metabolic/Osteoporosis.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Rheumatology,https://pathwaysbc.ca/specialties/9,,,[Ophthalmology](https://pathwaysbc.ca/specialties/15),"login; specialists and clinics, with referral details","Pathways, Rheumatology, Ophthalmology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Polymyalgia Rheumatica,https://www.healthlinkbc.ca/healthwise/polymyalgia-rheumatica,,,,,PMR,BC,,

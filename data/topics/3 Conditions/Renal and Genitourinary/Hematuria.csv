@@ -1,0 +1,13 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,,,,,,"BC workup of microscopic hematuria in adults, including who needs urology referral",microscopic hematuria workup,BC,,bc-gpac-microscopic-hematuria-2020
+Key Sources,,,CMAJ - Five things to know about microscopic hematuria,,,,,Canadian,,CA,,cmaj-5t-microscopic-hematuria-2020
+Algorithms and Pathways,,,Alberta's Pathway Hub - Hematuria Evaluation (bladder cancer),https://www.primarycarealberta.ca/pathways/198/clinical,2024,,,Primary Care Alberta pathway,bladder cancer,AB,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Hematuria,https://blackbook.ucalgary.ca/schemes/renal/hematuria/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Proteinuria,https://blackbook.ucalgary.ca/schemes/renal/proteinuria/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Renal mass: solid,https://blackbook.ucalgary.ca/schemes/renal/renal-mass-solid/,,,,,,CA,,
+Assessment Tools and Calculators,,,PedsCases - Hematuria,https://www.pedscases.com/hematuria,2026,,,Canadian pediatric approach,children,CA,,
+Assessment Tools and Calculators,md,,- Kidney function and albuminuria — *see [Chronic Kidney Disease (CKD)](Chronic%20Kidney%20Disease%20%28CKD%29.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Urology,https://pathwaysbc.ca/specialties/33,,,[Nephrology](https://pathwaysbc.ca/specialties/17),"login; specialists and clinics, with referral details","Pathways, Urology, Nephrology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

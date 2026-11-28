@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,CMAJ - Five things to know about anal fissures,,,,,Canadian,fissure,CA,,cmaj-5t-anal-fissures-2019
+Key Sources,,,AAFP - Benign Anorectal Conditions: Evaluation and Management,https://www.aafp.org/afp/2020/0101/p24,2020,,,"International source: US review, not Canadian; hemorrhoids, fissures, abscess and fistula, pruritus ani",benign anorectal,INTL,,
+Further Resources,,,AAFP - Hemorrhoids: Diagnosis and Treatment Options,https://www.aafp.org/afp/2018/0201/p172,2018,,,"International source: US review, not Canadian",hemorrhoid treatment,INTL,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Anorectal pain,https://blackbook.ucalgary.ca/schemes/gastrointestinal/anorectal-pain/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Lower gastrointestinal bleed,https://blackbook.ucalgary.ca/schemes/gastrointestinal/lower-gastrointestinal-bleed/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Rectal bleeding and colorectal cancer — *see [Suspected Cancer in Primary Care](../Hematology%20and%20Oncology/Suspected%20Cancer%20in%20Primary%20Care.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Gastroenterology,https://pathwaysbc.ca/specialties/8,,,[General Surgery](https://pathwaysbc.ca/specialties/3),"login; specialists and clinics, with referral details","Pathways, Gastroenterology, General Surgery",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Hemorrhoids,https://www.healthlinkbc.ca/healthwise/hemorrhoids,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Hemorrhoids: Which Treatment Should I Use?,https://www.healthlinkbc.ca/healthwise/hemorrhoids-which-treatment-should-i-use,,,,decision aid,,BC,,
+Patient Resources,,,HealthLink BC - Rectal Problems,https://www.healthlinkbc.ca/healthwise/rectal-problems,,,,,rectal problems,BC,,

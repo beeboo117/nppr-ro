@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,,,,,,"International guideline (Monash-led, with Canadian endorsement bodies); diagnosis, metabolic screening and treatment",PCOS guideline,INTL,,international-evidence-based-guideline-for-the-assessment-an
+Key Sources,,,,,,,,Canadian,hirsutism,CA,,sogc-guideline-no-444-hirsutism-evaluation-and-treatment
+Further Resources,,,Canadian Family Physician - Management of idiopathic hirsutism,https://www.cfp.ca/content/58/2/173,2012,,,Canadian,hirsutism,CA,,
+Further Resources,,,AAFP - Diagnosis and Treatment of Polycystic Ovary Syndrome,https://www.aafp.org/afp/2016/0715/p106,2016,,,"International source: US review, not Canadian",PCOS,INTL,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Hirsutism,https://blackbook.ucalgary.ca/schemes/endocrinology/hirsutism/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Hirsutism & virilization: androgen excess,https://blackbook.ucalgary.ca/schemes/endocrinology/hirsutism-virilization-androgen-excess/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Amenorrhea,https://blackbook.ucalgary.ca/schemes/endocrinology/amenorrhea/,,,,,,CA,,
+Assessment Tools and Calculators,md,,"- Diabetes and lipid screening — *see [Diabetes, Type 2](../Endocrine%20and%20Metabolic/Diabetes%2C%20Type%202.md)*",,,,,,,,,
+Prescribing,md,,- Hormonal contraception — *see [Contraception](Contraception.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Endocrinology,https://pathwaysbc.ca/specialties/6,,,[Obstetrics / Gynecology](https://pathwaysbc.ca/specialties/22),"login; specialists and clinics, with referral details","Pathways, Endocrinology, Obstetrics / Gynecology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

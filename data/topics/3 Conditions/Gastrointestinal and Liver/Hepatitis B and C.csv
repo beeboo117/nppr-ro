@@ -1,0 +1,25 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,box,,,,,,,which tests to order and how to read them,hepatitis testing serology,BC,yes,bc-gpac-viral-hepatitis-testing-2021
+Key Sources,,1,Appendix 3: Hepatitis B Serology Results and Interpretation (PDF),https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/viralhepatitistesting-appendix3.pdf,,,,,serology interpretation,,,
+Key Sources,,1,Appendix 5: Hepatitis B Testing Guide (PDF),https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/viralhepatitistesting-appendix5.pdf,,,,,,,,
+Key Sources,,1,Appendix 6: Hepatitis C Testing Guide (PDF),https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/viralhepatitistesting-appendix6.pdf,,,,,,,,
+Key Sources,,,Alberta's Pathway Hub - Hepatitis B,https://www.primarycarealberta.ca/pathways/200/clinical,2025,,,Primary Care Alberta pathway,hepatitis B pathway,AB,,
+Key Sources,,,Alberta's Pathway Hub - Hepatitis C,https://www.primarycarealberta.ca/pathways/201/clinical,2022,,,"Primary Care Alberta pathway, including treatment in primary care",hepatitis C pathway,AB,,
+Further Resources,,,,,,,,Canadian screening recommendation,screening,CA,,ctfphc-hepatitis-c-2017
+Further Resources,,,CMAJ - Five things to know about hepatitis C virus infection,,,,,Canadian,,CA,,cmaj-5t-hepatitis-c-virus-infection-2015
+Further Resources,,,CMAJ - Five things to know about hepatitis B reactivation with immunosuppression,,,,,Canadian,reactivation immunosuppression,CA,,cmaj-5t-reactivation-of-hepatitis-b-virus-associated-2018
+Further Resources,,,"AAFP - Hepatitis B: Screening, Prevention, Diagnosis, and Treatment",https://www.aafp.org/afp/2019/0301/p314,2019,,,"International source: US review, not Canadian",hepatitis B,INTL,,
+Further Resources,,,AAFP - Hepatitis C: Diagnosis and Management,https://www.aafp.org/afp/2021/1200/p626,2021,,,"International source: US review, not Canadian",hepatitis C,INTL,,
+Assessment Tools and Calculators,md,,- Abnormal liver enzymes and fibrosis scores — *see [Abnormal Liver Tests and MASLD](Abnormal%20Liver%20Tests%20and%20MASLD.md)*,,,,,,,,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Elevated liver enzymes,https://blackbook.ucalgary.ca/schemes/gastrointestinal/elevated-liver-enzymes/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Jaundice,https://blackbook.ucalgary.ca/schemes/gastrointestinal/jaundice/,,,,,,CA,,
+Prescribing,,,,,,,,antivirals compared; the chart needs an RxFiles subscription,DAA tenofovir,CA,,rxfiles-hepatitis-chart
+Prescribing,,,,,,,,who qualifies for publicly funded hepatitis B vaccine in BC,hepatitis B vaccine,BC,yes,bccdc-immunization-manual-hepb-pre-exposure
+Prescribing,md,,- Hepatitis A and B vaccines — *see [Immunization](../../6%20Prescribing/Immunization.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Gastroenterology,https://pathwaysbc.ca/specialties/8,,,[Infectious Disease](https://pathwaysbc.ca/specialties/34),"login; specialists and clinics, with referral details","Pathways, Gastroenterology, Infectious Disease",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Living Well with Hepatitis B Virus Infection,https://www.healthlinkbc.ca/healthlinkbc-files/living-well-hepatitis-b-virus-infection,,,,HealthLinkBC File 40d,hepatitis B,BC,,
+Patient Resources,,,HealthLink BC - Living Well with Hepatitis C Virus,https://www.healthlinkbc.ca/healthlinkbc-files/living-well-hepatitis-c-virus,,,,HealthLinkBC File 40b,hepatitis C,BC,,
+Patient Resources,,,HealthLink BC - Healthy Eating for Chronic Hepatitis,https://www.healthlinkbc.ca/healthlinkbc-files/healthy-eating-chronic-hepatitis,,,,HealthLinkBC File 40c,diet,BC,,

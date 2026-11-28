@@ -1,0 +1,12 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Canadian Family Physician - Topical management of tinea pedis,https://www.cfp.ca/content/67/1/30,2021,,,Canadian,tinea pedis topical,CA,,
+Key Sources,,,CMAJ - Five things to know about refractory tinea caused by Trichophyton indotineae,,,,,"Canadian; a resistant, spreading tinea",resistant tinea indotineae,CA,,cmaj-5t-refractory-tinea-corporis-or-cruris-caused-2024
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Skin rash: papulosquamous,https://blackbook.ucalgary.ca/schemes/dermatologic/skin-rash-papulosquamous/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Nail disorders: primary dermatologic disease,https://blackbook.ucalgary.ca/schemes/dermatologic/nail-disorders-primary-dermatologic-disease/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Hair loss (alopecia): localized,https://blackbook.ucalgary.ca/schemes/dermatologic/hair-loss-alopecia-localized/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Skin exam and terminology — *see [Skin Exam](../../2%20Assessments/Physical%20Exam%20by%20System/Skin%20Exam.md)*,,,,,,,,,
+Prescribing,md,,- Antifungal choices — *see [Antimicrobials](../../6%20Prescribing/Antimicrobials.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Dermatology,https://pathwaysbc.ca/specialties/5,,,,"login; specialists and clinics, with referral details","Pathways, Dermatology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

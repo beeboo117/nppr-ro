@@ -1,0 +1,18 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Pathways BC - Hearing Loss,https://pathwaysbc.ca/ci/9104,2026,,,BC enhanced care pathway,hearing pathway,BC,yes,
+Key Sources,,,Canadian Family Physician - Hearing loss,https://www.cfp.ca/content/66/11/803,2020,,,Canadian,hearing loss,CA,,
+Key Sources,,,CMAJ - Five things to know about sudden sensorineural hearing loss,,,,,Canadian; sudden hearing loss needs urgent treatment and referral,sudden SSNHL,CA,,cmaj-5t-sudden-sensorineural-hearing-loss-2025
+Further Resources,,,Canadian Family Physician - Tinnitus management,https://www.cfp.ca/content/64/7/491,2018,,,Canadian,tinnitus,CA,,
+Further Resources,,,AAFP - Hearing Loss in Adults: Differential Diagnosis and Treatment,https://www.aafp.org/afp/2019/0715/p98,2019,,,"International source: US review, not Canadian",adults,INTL,,
+Further Resources,,,AAFP - Tinnitus: Diagnosis and Management,https://www.aafp.org/afp/2021/0601/p663,2021,,,"International source: US review, not Canadian",tinnitus,INTL,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Hearing loss: conductive,https://blackbook.ucalgary.ca/schemes/otolaryngologic/hearing-loss-conductive/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Hearing loss: sensorineural,https://blackbook.ucalgary.ca/schemes/otolaryngologic/hearing-loss-sensorineural/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Tinnitus: subjective,https://blackbook.ucalgary.ca/schemes/otolaryngologic/tinnitus-subjective/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Tinnitus: objective,https://blackbook.ucalgary.ca/schemes/otolaryngologic/tinnitus-objective/,,,,,,CA,,
+Assessment Tools and Calculators,,,AAFP - Cerumen Impaction: Diagnosis and Management,,,,,International source,cerumen,INTL,,aafp-cerumen-impaction-2018
+Assessment Tools and Calculators,md,,"- Cerumen removal — *see [Ear, Nose and Eye Procedures](../../5%20Procedures/Ear%20Nose%20and%20Eye%20Procedures.md)*",,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - ENT / Otolaryngology,https://pathwaysbc.ca/specialties/18,,,,"login; specialists and clinics, with referral details","Pathways, ENT / Otolaryngology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,,,,,,,earwax,BC,,healthlinkbc-earwax

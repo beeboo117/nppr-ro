@@ -1,0 +1,16 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Canadian Urological Association - Erectile dysfunction guideline (2021),https://cuaj.ca/index.php/journal/article/view/7572,2021,,,"Canadian; evaluation for reversible causes and shared decision-making on treatment, with an algorithm; CUAJ 15(10)",CUA ED guideline PDE5,CA,,
+Key Sources,,,,,,,,"when and how to test testosterone, with a hypogonadism algorithm",testosterone testing hypogonadism,BC,,bc-gpac-testosterone-testing-2018
+Key Sources,,1,"BC Guidelines - Testosterone Testing, Appendix C: Hypogonadism Investigation Algorithm (PDF)",https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/testosterone-guideline_appendixc.pdf,,,,,algorithm,BC,,
+Key Sources,,1,"BC Guidelines - Testosterone Testing, Appendix B: Medications that May Alter Testosterone Levels (PDF)",https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/testosterone-guideline_appendixb.pdf,,,,,medications,BC,,
+Further Resources,,,Diabetes Canada - Sexual Dysfunction and Hypogonadism in Men with Diabetes,https://www.diabetes.ca/for-professionals/full-guidelines/chapter-33,,,,Canadian; ED and hypogonadism in men with diabetes,diabetes,CA,,
+Further Resources,,,,,,,,all current CUA guidelines,CUA,CA,,canadian-urological-association-guidelines
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Male sexual dysfunction,https://blackbook.ucalgary.ca/schemes/endocrinology/male-sexual-dysfunction/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Gynecomastia: increased LH & decreased testosterone,https://blackbook.ucalgary.ca/schemes/endocrinology/gynecomastia-increased-lh-decreased-testosterone/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Cardiovascular risk — *see [Cardiovascular Risk and Lipids](../Cardiovascular/Cardiovascular%20Risk%20and%20Lipids.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Urology,https://pathwaysbc.ca/specialties/33,,,[Endocrinology](https://pathwaysbc.ca/specialties/6),"login; specialists and clinics, with referral details","Pathways, Urology, Endocrinology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Erection Problems (Erectile Dysfunction),https://www.healthlinkbc.ca/healthwise/erection-problems-erectile-dysfunction,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Erection Problems: Should I Take Medicine?,https://www.healthlinkbc.ca/healthwise/erection-problems-should-i-take-medicine,,,,decision aid,PDE5,BC,,

@@ -54,6 +54,7 @@ const srcCount = (p: Page) => p.entries.filter(e => e.url || e.pdf).length;
         {newest && <span class="pill">Newest <b>{newest}</b></span>}
         {page.isIndex && <span class="pill"><b>{gridKids.length}</b> {page.generated ? "pages" : "topics"}</span>}
         {page.region && <span class="pill">For <b>{page.region}</b> only</span>}
+        {page.local && <span class="pill" title="Written for this site; not on NPPR.ca">Added here</span>}
         {!page.isIndex && <button class="pill bookmark-btn" id="bookmark-btn" aria-pressed="false" style="cursor:pointer">☆ Save</button>}
       </div>
     </header>
@@ -130,6 +131,8 @@ const srcCount = (p: Page) => p.entries.filter(e => e.url || e.pdf).length;
     )}
     {page.generated ? (
       <p class="r-foot" style="margin-top:30px">Built by this site from the prescribing sections of NPPR.ca condition and population pages · Content © NPPR.ca contributors, CC BY 4.0.</p>
+    ) : page.local ? (
+      <p class="r-foot" style="margin-top:30px">Added by this site, not on NPPR.ca: built in NPPR's page format, mostly from links already checked in NPPR's source registry and approach lists (including the University of Calgary Blackbook) · <a href={`https://github.com/beeboo117/nppr-ro/blob/main/data/topics/${page.file.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener">view the page source</a>.</p>
     ) : <p class="r-foot" style="margin-top:30px">Original page: <a href={`https://github.com/joegrafe/np-practice-resource/blob/main/docs/${page.file.split('/').map(encodeURIComponent).join('/')}`} target="_blank" rel="noopener">view on GitHub</a> · Content © NPPR.ca contributors, CC BY 4.0.</p>}
   </div>
   {showPanel && <ResearchPanel page={page} slot="panel" />}

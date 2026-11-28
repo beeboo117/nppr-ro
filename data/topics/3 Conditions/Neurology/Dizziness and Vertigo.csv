@@ -1,0 +1,14 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,AAFP - Dizziness: Evaluation and Management,https://www.aafp.org/afp/2023/0500/dizziness,2023,,,"International source: US review, not Canadian",dizziness evaluation,INTL,,
+Key Sources,,,Alberta's Pathway Hub - Vertigo,https://www.primarycarealberta.ca/pathways/409/clinical,2024,,,Primary Care Alberta pathway,vertigo BPPV pathway,AB,,
+Further Resources,,,,,,,,Canadian; after concussion,post-concussion vestibular,CA,,onf-living-concussion-vestibular-vision
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Dizziness: dizziness,https://blackbook.ucalgary.ca/schemes/neurologic/dizziness-dizziness/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Dizziness: vertigo,https://blackbook.ucalgary.ca/schemes/neurologic/dizziness-vertigo/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Syncope,https://blackbook.ucalgary.ca/schemes/cardiovascular/syncope/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Falls in the elderly,https://blackbook.ucalgary.ca/schemes/neurologic/falls-in-the-elderly/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Stroke and TIA — *see [Stroke and Transient Ischemic Attack (TIA)](Stroke%20and%20Transient%20Ischemic%20Attack%20%28TIA%29.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - ENT / Otolaryngology,https://pathwaysbc.ca/specialties/18,,,[Neurology](https://pathwaysbc.ca/specialties/14),"login; specialists and clinics, with referral details","Pathways, ENT / Otolaryngology, Neurology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Benign Paroxysmal Positional Vertigo (BPPV),https://www.healthlinkbc.ca/healthwise/benign-paroxysmal-positional-vertigo-bppv,,,,,BPPV,BC,,

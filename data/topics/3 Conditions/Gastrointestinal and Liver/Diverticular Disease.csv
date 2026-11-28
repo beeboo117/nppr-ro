@@ -1,0 +1,13 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,CMAJ - Five things to know about management of acute diverticulitis,,,,,Canadian; outpatient care and when antibiotics and imaging are needed,acute diverticulitis antibiotics,CA,,cmaj-5t-management-of-acute-diverticulitis-2022
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Abdominal pain (adult): acute - localized,https://blackbook.ucalgary.ca/schemes/gastrointestinal/abdominal-pain-adult-acute-localized/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Lower gastrointestinal bleed,https://blackbook.ucalgary.ca/schemes/gastrointestinal/lower-gastrointestinal-bleed/,,,,,,CA,,
+Assessment Tools and Calculators,,,,,,,,imaging for abdominal pain,CT,BC,,bc-gpac-appropriate-imaging-2019
+Prescribing,md,,- Antibiotic choice — *see [Antimicrobials](../../6%20Prescribing/Antimicrobials.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Gastroenterology,https://pathwaysbc.ca/specialties/8,,,[General Surgery](https://pathwaysbc.ca/specialties/3),"login; specialists and clinics, with referral details","Pathways, Gastroenterology, General Surgery",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Diverticulitis,https://www.healthlinkbc.ca/healthwise/diverticulitis,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Diverticulosis,https://www.healthlinkbc.ca/healthwise/diverticulosis,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Eating Guidelines for Diverticular Disease (PDF),https://www.healthlinkbc.ca/sites/default/files/healthyeating/pdf/eating_guidelines_for_people_with_diverticular_disease.pdf,,,,,diet fibre,BC,,

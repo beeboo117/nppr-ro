@@ -1,0 +1,13 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,,,,,,Canadian; evaluation and medical and surgical management,SOGC AUB,CA,,sogc-guideline-no-292-abnormal-uterine-bleeding-in-pre-menop
+Key Sources,,,Ontario Health - Heavy Menstrual Bleeding: Care for Adults and Adolescents of Reproductive Age (quality standard),,,,,Ontario quality standard,HMB,ON,,ontario-health-heavy-menstrual-bleeding-qs-2024
+Algorithms and Pathways,,,Alberta's Pathway Hub - Abnormal Uterine Bleeding,,,,,Primary Care Alberta pathway,AUB pathway,CA,,alberta-pathway-hub-abnormal-uterine-bleeding
+Algorithms and Pathways,,,Alberta's Pathway Hub - Adolescent Abnormal Uterine Bleeding,https://www.primarycarealberta.ca/pathways/12/clinical,2024,,,Primary Care Alberta pathway,adolescents,AB,,
+Algorithms and Pathways,,,Pathways BC - Post-Menopausal Bleeding Primary Care Pathway,,,,,BC enhanced care pathway,postmenopausal bleeding,BC,yes,bc-pathway-postmenopausal-bleeding-2026
+Further Resources,,,,,,,,Canadian,anticoagulation DOAC,CA,,thrombosiscanada-hmb-anticoagulation-2025
+Further Resources,,,,,,,,when bleeding raises concern for endometrial cancer,endometrial cancer,BC,,bc-gpac-endometrial-cancer-2014
+Assessment Tools and Calculators,md,,- Iron deficiency from heavy bleeding — *see [Iron Deficiency Anemia](../Hematology%20and%20Oncology/Iron%20Deficiency%20Anemia.md)*,,,,,,,,,
+Prescribing,md,,- Hormonal options and IUDs — *see [Contraception](Contraception.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Obstetrics / Gynecology,https://pathwaysbc.ca/specialties/22,,,,"login; specialists and clinics, with referral details","Pathways, Obstetrics / Gynecology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

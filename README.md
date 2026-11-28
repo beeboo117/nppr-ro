@@ -12,6 +12,7 @@ RoPro's interactive index of current primary care guidelines for NPs, MDs and DO
 - **Topic pages:** a contents bar, a filter box for the page's links, collapsible guideline boxes, year badges coloured by age, PDF chips, a reading progress bar and a ☆ Save button.
 - **Research sidebar:** on every topic page, live results from PubMed (newest articles, reviews, guidelines, trials), Europe PMC (free full text and NCBI Bookshelf / StatPearls chapters), a Wikipedia summary, and links to videos, podcasts, flashcards and more.
 - **Province switch** (BC / ON) and light and dark themes.
+- **42 extra condition pages** that NPPR.ca doesn't have yet (BPH, kidney stones, IBD, hepatitis B and C, epilepsy, Parkinson disease, shoulder and knee pain, skin cancer, HIV and PrEP, bipolar disorder, PCOS, PAD and more). Each one links the University of Calgary Blackbook diagnostic schemes for its presentations.
 
 ## How it works
 
@@ -23,6 +24,12 @@ npm run sync      # fetch the latest NPPR content into ./content
 npm run dev       # http://localhost:4321/nppr-ro/
 npm run build     # static site in ./dist
 ```
+
+## Extra topic pages
+
+`data/topics/` holds topic pages written for this site, laid out like NPPR's `docs/` folder (for example `data/topics/3 Conditions/Neurology/Epilepsy and Seizures.md` with its `.csv` list sheet beside it). They use NPPR's page format and list-sheet columns, and can cite NPPR's source registry by `source` id. The build merges them into the synced content and marks them "Added here". If NPPR later publishes a page at the same address, the upstream page is used and ours is skipped with a build warning.
+
+Most links on these pages come from NPPR's own checked registry and approach lists (CMAJ Five Things, Canadian Family Physician, AAFP, Pathways BC, Alberta's Pathway Hub, CEP, Ontario Health, PedsCases, TREKK and the UCalgary Blackbook). Links added from elsewhere (mainly CUA guidelines and HealthLink BC patient pages) were found and checked by search on 2026-11-28; each page's header comment says which.
 
 ## Credit and licence
 

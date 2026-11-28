@@ -1,0 +1,19 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,CMAJ - Canadian guideline for Parkinson disease (2nd edition),https://www.cmaj.ca/content/191/36/E989,2019,,,"Canadian; Parkinson Canada guideline on diagnosis, motor and non-motor symptoms and palliative care; CMAJ 191(36):E989",Parkinson guideline,CA,,
+Key Sources,,,Alberta's Pathway Hub - Parkinson's Disease,https://www.primarycarealberta.ca/pathways/311/clinical,2024,,,Primary Care Alberta pathway,Parkinson pathway,AB,,
+Key Sources,,,Alberta's Pathway Hub - Suspected Essential Tremor,https://www.primarycarealberta.ca/pathways/163/clinical,2024,,,Primary Care Alberta pathway,essential tremor,AB,,
+Further Resources,,,"Canadian Family Physician - Parkinson disease primer, part 2: management of motor and nonmotor symptoms",https://www.cfp.ca/content/69/2/91,2023,,,Canadian,motor nonmotor management,CA,,
+Further Resources,,,CMAJ - Five things to know about orthostatic hypotension in Parkinson disease,,,,,Canadian,orthostatic hypotension,CA,,cmaj-5t-orthostatic-hypotension-in-parkinson-disease-2026
+Further Resources,,,CMAJ - Five things to know about essential tremor,,,,,Canadian,essential tremor,CA,,cmaj-5t-essential-tremor-2017
+Further Resources,,,Canadian Family Physician - Pharmacologic management of essential tremor,https://www.cfp.ca/content/56/3/250,2010,,,Canadian,propranolol primidone,CA,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Movement disorder: bradykinetic,https://blackbook.ucalgary.ca/schemes/neurologic/movement-disorder-bradykinetic/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Movement disorder: tremor,https://blackbook.ucalgary.ca/schemes/neurologic/movement-disorder-tremor/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Movement disorder: hyperkinetic,https://blackbook.ucalgary.ca/schemes/neurologic/movement-disorder-hyperkinetic/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Gait disturbance,https://blackbook.ucalgary.ca/schemes/neurologic/gait-disturbance/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Falls in the elderly,https://blackbook.ucalgary.ca/schemes/neurologic/falls-in-the-elderly/,,,,,,CA,,
+Assessment Tools and Calculators,,,,,,,,International source,exam tremor,INTL,,stanford-25-involuntary-movements-and-tremors
+Assessment Tools and Calculators,md,,- Falls and frailty — *see [Dementia and Frailty](Dementia%20and%20Frailty.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Neurology,https://pathwaysbc.ca/specialties/14,,,[Geriatric Medicine](https://pathwaysbc.ca/specialties/7),"login; specialists and clinics, with referral details","Pathways, Neurology, Geriatric Medicine",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

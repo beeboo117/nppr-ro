@@ -1,0 +1,19 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Alberta's Pathway Hub - Shoulder,https://www.primarycarealberta.ca/pathways/223/clinical,2024,,,"Primary Care Alberta pathway: assessment, imaging, conservative care and referral",shoulder pathway,AB,,
+Key Sources,,,McGill Journal of Medicine - Rotator cuff pathology,https://mjm.mcgill.ca/article/view/957,2023,,,Canadian student-written approach article,rotator cuff,CA,,
+Further Resources,,,AAFP - Acute Shoulder Injuries in Adults,,,,,"International source: US review, not Canadian",acute injury dislocation,INTL,,aafp-acute-shoulder-injuries-2023
+Further Resources,,,AAFP - The Painful Shoulder: Part I. Clinical Evaluation,,,,,International source: older US review of clinical evaluation,evaluation,INTL,,aafp-painful-shoulder-2000
+Further Resources,,,"Ontario Health - Osteoarthritis: Care for Adults With Osteoarthritis of the Knee, Hip, Hand, or Shoulder (quality standard)",,,,,Ontario quality standard; includes shoulder osteoarthritis,osteoarthritis,ON,,ontario-health-osteoarthritis-qs-2024
+Assessment Tools and Calculators,,,,,,,,Canadian exam guide,exam,CA,,rheuminfo-shoulder-exam
+Assessment Tools and Calculators,,,,,,,,Canadian,exam,CA,,uoft-musculoskeletal-examination
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Chronic joint pain,https://blackbook.ucalgary.ca/schemes/musculoskeletal/chronic-joint-pain/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Inflammatory joint pain,https://blackbook.ucalgary.ca/schemes/musculoskeletal/inflammatory-joint-pain/,,,,,,CA,,
+Assessment Tools and Calculators,,,,,,,,when shoulder imaging helps,imaging ultrasound MRI,BC,,bc-gpac-appropriate-imaging-2019
+Assessment Tools and Calculators,md,,"- Injections and reductions — *see [Joint Injections, Splints and Reductions](../../5%20Procedures/Joint%20Injections%20Splints%20and%20Reductions.md)*",,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Orthopedics,https://pathwaysbc.ca/specialties/1,,,[Sports Medicine](https://pathwaysbc.ca/specialties/32) · [Physical Medicine & Rehabilitation](https://pathwaysbc.ca/specialties/29),"login; specialists and clinics, with referral details","Pathways, Orthopedics, Sports Medicine, Physical Medicine & Rehabilitation",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Rotator Cuff Disorders,https://www.healthlinkbc.ca/healthwise/rotator-cuff-disorders,,,,,rotator cuff,BC,,
+Patient Resources,,,HealthLink BC - Rotator Cuff Problems: Exercises You Can Do at Home,https://www.healthlinkbc.ca/healthwise/rotator-cuff-problems-exercises-you-can-do-home,,,,,exercises,BC,,
+Patient Resources,,,HealthLink BC - Frozen Shoulder,https://www.healthlinkbc.ca/healthwise/frozen-shoulder,,,,,adhesive capsulitis,BC,,

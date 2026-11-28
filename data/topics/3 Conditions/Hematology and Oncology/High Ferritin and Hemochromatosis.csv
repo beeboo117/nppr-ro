@@ -1,0 +1,9 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,box,,,,,,,"investigation of high ferritin, HFE testing and management",ferritin HFE,BC,yes,bc-gpac-high-ferritin-2021
+Key Sources,,1,Appendix D: Scenarios in Which Genetic Testing for HFE-HH Is Not Indicated (PDF),https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/high_ferritin_and_iron_overload_appd.pdf,,,,,genetic testing,,,
+Key Sources,,1,Appendix E: Laboratory Test Procedures for HFE-HH Testing (PDF),https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/bc-guidelines/high_ferritin_and_iron_overload_appe.pdf,,,,,lab,,,
+Key Sources,,,CMAJ - Five things to know about hyperferritinemia,,,,,Canadian,hyperferritinemia,CA,,cmaj-5t-hyperferritinemia-2021
+Assessment Tools and Calculators,md,,- Fatty liver and abnormal liver tests — *see [Abnormal Liver Tests and MASLD](../Gastrointestinal%20and%20Liver/Abnormal%20Liver%20Tests%20and%20MASLD.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Hematology,https://pathwaysbc.ca/specialties/61,,,[Gastroenterology](https://pathwaysbc.ca/specialties/8),"login; specialists and clinics, with referral details","Pathways, Hematology, Gastroenterology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

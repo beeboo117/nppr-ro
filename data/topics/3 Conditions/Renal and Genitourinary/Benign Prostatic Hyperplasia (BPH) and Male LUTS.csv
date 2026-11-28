@@ -1,0 +1,21 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Canadian Urological Association - Male LUTS/BPH guideline (2022 update),https://cuaj.ca/index.php/journal/article/view/7906,2022,,,"Canadian; assessment and medical and surgical management of male LUTS from BPH in men over 50, with a management algorithm; CUAJ 16(8):245-56",CUA guideline alpha-blocker 5-ARI,CA,,
+Key Sources,,,McGill Journal of Medicine - Lower urinary tract symptoms from benign prostatic hyperplasia,https://mjm.mcgill.ca/article/view/330,2022,,,Canadian student-written approach article,approach LUTS,CA,,
+Further Resources,,,AAFP - Urinary Retention in Adults: Evaluation and Initial Management,https://www.aafp.org/afp/2018/1015/p496,2018,,,"International source: US review, not Canadian",urinary retention catheter,INTL,,
+Further Resources,,,AAFP - Acute Bacterial Prostatitis: Diagnosis and Management,https://www.aafp.org/afp/2016/0115/p114,2016,,,"International source: US review, not Canadian",prostatitis,INTL,,
+Further Resources,,,,,,,,all current CUA guidelines,CUA,CA,,canadian-urological-association-guidelines
+Algorithms and Pathways,,,Alberta's Pathway Hub - Male Lower Urinary Tract Symptoms (LUTS),https://www.primarycarealberta.ca/pathways/242/clinical,2025,,,Primary Care Alberta pathway,LUTS pathway,AB,,
+Algorithms and Pathways,,,Alberta's Pathway Hub - PSA Testing,https://www.primarycarealberta.ca/pathways/149/clinical,2025,,,Primary Care Alberta pathway; for PSA questions that come with LUTS,PSA,AB,,
+Algorithms and Pathways,,,,,,,,when LUTS raise concern for prostate cancer,PSA prostate cancer,BC,,bc-gpac-prostate-cancer-part1-2020
+Algorithms and Pathways,note,,No BC or Ontario pathway for BPH found.,,,,,,,,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Urinary tract obstruction,https://blackbook.ucalgary.ca/schemes/renal/urinary-tract-obstruction/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Increased urinary frequency,https://blackbook.ucalgary.ca/schemes/renal/increased-urinary-frequency/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Urinary incontinence,https://blackbook.ucalgary.ca/schemes/renal/urinary-incontinence/,,,,,,CA,,
+Assessment Tools and Calculators,,,,,,,,,DRE,CA,,saskpoly-aps-prostate-examination
+Prescribing,,,CUA MLUTS/BPH guideline (PDF),https://www.cua.org/system/files/Guideline-Files/7906.pdf,2022,,,"drug choices (alpha-blockers, 5-alpha reductase inhibitors, antimuscarinics, beta-3 agonists, tadalafil) are in the guideline PDF",tamsulosin finasteride mirabegron,CA,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Urology,https://pathwaysbc.ca/specialties/33,,,,"login; specialists and clinics, with referral details","Pathways, Urology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Benign Prostatic Hyperplasia (BPH),https://www.healthlinkbc.ca/healthwise/benign-prostatic-hyperplasia-bph,,,,,enlarged prostate,BC,,
+Patient Resources,,,HealthLink BC - Enlarged Prostate: Should I Take Medicine?,https://www.healthlinkbc.ca/healthwise/enlarged-prostate-should-i-take-medicine,,,,decision aid,medicine decision,BC,,

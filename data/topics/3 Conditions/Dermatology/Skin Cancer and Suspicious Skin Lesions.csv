@@ -1,0 +1,20 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,CMAJ - Five things to know about melanoma,,,,,Canadian,melanoma,CA,,cmaj-5t-melanoma-2019
+Key Sources,,,AAFP - Basal Cell and Cutaneous Squamous Cell Carcinomas: Diagnosis and Treatment,https://www.aafp.org/afp/2020/0915/p339,2020,,,"International source: US review, not Canadian",BCC SCC,INTL,,
+Key Sources,,,CMAJ - Five things to know about actinic keratosis,,,,,Canadian,actinic keratosis,CA,,cmaj-5t-actinic-keratosis-2026
+Further Resources,,,CMAJ - Five things to know about sunscreens,,,,,Canadian,sunscreen prevention,CA,,cmaj-5t-sunscreens-2015
+Further Resources,,,,,,,,Canadian; hydrochlorothiazide and skin cancer risk,hydrochlorothiazide,CA,,tfp-248-htn
+Further Resources,,,BC Cancer - Melanoma,https://www.bccancer.bc.ca/health-info/types-of-cancer/skin/melanoma,,,,BC Cancer information on melanoma,BC Cancer,BC,,
+Assessment Tools and Calculators,,,,,,,,International source,skin exam,INTL,,dermnet-total-body-skin-exam
+Assessment Tools and Calculators,,,,,,,,International source,dermoscopy,INTL,,dermnet-dermoscopy
+Assessment Tools and Calculators,,,AAFP - Dermoscopy for the Family Physician,,,,,International source,dermoscopy,INTL,,aafp-dermoscopy-2013
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Morphology of skin lesions: primary skin lesions,https://blackbook.ucalgary.ca/schemes/dermatologic/morphology-of-skin-lesions-primary-skin-lesions/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Disorders of pigmentation: hyperpigmentation,https://blackbook.ucalgary.ca/schemes/dermatologic/disorders-of-pigmentation-hyperpigmentation/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Skin ulcer by location: head and neck,https://blackbook.ucalgary.ca/schemes/dermatologic/skin-ulcer-by-location-head-and-neck/,,,,,,CA,,
+Assessment Tools and Calculators,,,AAFP - Shave and Punch Biopsy for Skin Lesions,,,,,International source,biopsy,INTL,,aafp-shave-punch-biopsy-2011
+Assessment Tools and Calculators,md,,- Other cancer red flags — *see [Suspected Cancer in Primary Care](../Hematology%20and%20Oncology/Suspected%20Cancer%20in%20Primary%20Care.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Dermatology,https://pathwaysbc.ca/specialties/5,,,[Plastic Surgery](https://pathwaysbc.ca/specialties/10),"login; specialists and clinics, with referral details","Pathways, Dermatology, Plastic Surgery",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,,,,,,sun protection,sun,BC,,healthlinkbc-sunburn

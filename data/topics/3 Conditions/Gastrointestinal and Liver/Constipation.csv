@@ -1,0 +1,19 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Pathways BC - Constipation Care Pathway,,,,,"BC enhanced care pathway: assessment, red flags, stepwise treatment and referral",pathway,BC,yes,pathwaysbc-constipation-2026
+Key Sources,,,Alberta's Pathway Hub - Chronic Constipation,https://www.primarycarealberta.ca/pathways/82/clinical,2026,,,Primary Care Alberta pathway,chronic constipation,AB,,
+Further Resources,,,TREKK - Bottom Line Recommendations: Functional Constipation,,,,,Canadian pediatric emergency summary,children,CA,,trekk-functional-constipation-blr-2026
+Further Resources,,,Alberta's Pathway Hub - Pediatric Constipation,https://www.primarycarealberta.ca/pathways/98/clinical,2022,,,Primary Care Alberta pathway,children,AB,,
+Further Resources,,,PedsCases - Constipation,https://www.pedscases.com/constipation-0,2022,,,Canadian pediatric approach,children,CA,,
+Further Resources,,,BC Centre for Palliative Care - Constipation guideline (PDF),https://www.bc-cpc.ca/cpc/wp-content/uploads/2025/01/BCCPC-Constipation-Guideline.pdf,2025,,,BC Centre for Palliative Care; includes opioid-induced constipation,palliative opioid-induced,BC,,
+Further Resources,,,AAFP - Constipation in Children and Adolescents: Evaluation and Treatment,https://www.aafp.org/afp/2022/0500/p469,2022,,,"International source: US review, not Canadian",children adolescents,INTL,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Constipation (adult): altered bowel function & idiopathic,https://blackbook.ucalgary.ca/schemes/gastrointestinal/constipation-adult-altered-bowel-function-idiopathic/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Constipation (adult): secondary causes,https://blackbook.ucalgary.ca/schemes/gastrointestinal/constipation-adult-secondary-causes/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Constipation: (pediatric),https://blackbook.ucalgary.ca/schemes/pediatric/constipation-pediatric/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Stool incontinence,https://blackbook.ucalgary.ca/schemes/gastrointestinal/stool-incontinence/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Colorectal cancer red flags — *see [Suspected Cancer in Primary Care](../Hematology%20and%20Oncology/Suspected%20Cancer%20in%20Primary%20Care.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Gastroenterology,https://pathwaysbc.ca/specialties/8,,,,"login; specialists and clinics, with referral details","Pathways, Gastroenterology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,"HealthLink BC - Constipation, Age 12 and Older",https://www.healthlinkbc.ca/healthwise/constipation-age-12-and-older,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Managing Constipation with Diet: Adults,https://www.healthlinkbc.ca/healthlinkbc-files/managing-constipation-diet-adults,,,,HealthLinkBC File 68l,diet fibre,BC,,

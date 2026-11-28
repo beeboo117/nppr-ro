@@ -1,0 +1,21 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,Crohn's and Colitis Canada - IBD Clinical Care Pathways,https://crohnsandcolitis.ca/Support-for-You/Resources-for-Healthcare-Providers/Inflammatory-Bowel-Disease-Clinical-Care-Pathways,,,,Canadian; Crohn's and Colitis Canada pathways for diagnosing and managing Crohn's disease and ulcerative colitis,IBD pathway Crohn colitis,CA,,
+Key Sources,,,AAFP - Crohn's Disease: Diagnosis and Management,https://www.aafp.org/afp/2018/1201/p661,2018,,,"International source: US review, not Canadian",Crohn's,INTL,,
+Further Resources,,,CMAJ - Five things to know about inflammatory bowel disease in pregnancy,,,,,Canadian,pregnancy,CA,,cmaj-5t-inflammatory-bowel-disease-in-pregnancy-2017
+Further Resources,,,CMAJ - Five things to know about inflammatory bowel disease in children and adolescents,,,,,Canadian,children adolescents,CA,,cmaj-5t-inflammatory-bowel-disease-in-children-and-2019
+Further Resources,,,CMAJ - Five things to know about hepatitis B reactivation with immunosuppression,,,,,Canadian; screen for hepatitis B before immunosuppression,hepatitis B biologics,CA,,cmaj-5t-reactivation-of-hepatitis-b-virus-associated-2018
+Further Resources,,,PedsCases - Inflammatory Bowel Disease,https://www.pedscases.com/inflammatory-bowel-disease-0,2021,,,Canadian pediatric approach,children,CA,,
+Algorithms and Pathways,,,Alberta's Pathway Hub - Inflammatory Bowel Disease and Mental Health,https://www.primarycarealberta.ca/pathways/434/clinical,2025,,,Primary Care Alberta pathway,mental health,AB,,
+Algorithms and Pathways,note,,No BC or Ontario primary care pathway for IBD found.,,,,,,,,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Chronic diarrhea: small bowel,https://blackbook.ucalgary.ca/schemes/gastrointestinal/chronic-diarrhea-small-bowel/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Chronic diarrhea: steatorrhea & large bowel,https://blackbook.ucalgary.ca/schemes/gastrointestinal/chronic-diarrhea-steatorrhea-large-bowel/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Lower gastrointestinal bleed,https://blackbook.ucalgary.ca/schemes/gastrointestinal/lower-gastrointestinal-bleed/,,,,,,CA,,
+Assessment Tools and Calculators,,,,,,,,rule out infection in new diarrhea,stool testing,BC,,bc-gpac-infectious-diarrhea-2022
+Assessment Tools and Calculators,md,,- Functional symptoms — *see [Irritable Bowel Syndrome (IBS)](Irritable%20Bowel%20Syndrome%20%28IBS%29.md)*,,,,,,,,,
+Prescribing,md,,- Vaccines before and during immunosuppression — *see [Immunization](../../6%20Prescribing/Immunization.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Gastroenterology,https://pathwaysbc.ca/specialties/8,,,,"login; specialists and clinics, with referral details","Pathways, Gastroenterology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Patient Resources,,,HealthLink BC - Ulcerative Colitis,https://www.healthlinkbc.ca/healthwise/ulcerative-colitis-0,,,,,,BC,,
+Patient Resources,,,HealthLink BC - Bowel Disease: Changing Your Diet,https://www.healthlinkbc.ca/healthwise/bowel-disease-changing-your-diet,,,,,diet,BC,,

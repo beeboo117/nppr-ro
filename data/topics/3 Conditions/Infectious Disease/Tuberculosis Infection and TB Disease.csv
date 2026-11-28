@@ -1,0 +1,13 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,"Public Health Agency of Canada - Canadian Tuberculosis Standards, 8th edition",https://www.canada.ca/en/public-health/services/infectious-diseases/canadian-tuberculosis-standards-7th-edition.html,2022,,,"Canadian; national standards for TB infection and disease, by chapter (canada.ca keeps the 7th-edition address for the 8th edition)",TB standards,CA,,
+Key Sources,,1,Canadian Tuberculosis Standards - Chapter 6: TB preventive treatment in adults,https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards/preventive-treatment-adults.html,2022,,,Canadian; regimens for TB preventive treatment,4R 3HP isoniazid,CA,,
+Key Sources,,,CMAJ - Five things to know about tuberculin skin tests and interferon-gamma release assays,,,,,Canadian,TST IGRA,CA,,cmaj-5t-tuberculin-skin-tests-and-interferon-release-2023
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Cough: chronic,https://blackbook.ucalgary.ca/schemes/respiratory/cough-chronic/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Hemoptysis,https://blackbook.ucalgary.ca/schemes/respiratory/hemoptysis/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Fever of unknown origin / chronic fever,https://blackbook.ucalgary.ca/schemes/general/fever-of-unknown-origin-chronic-fever/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Screening newcomers — *see [Newcomers and Refugees](../../4%20Populations/Newcomers%20and%20Refugees.md)*,,,,,,,,,
+Advice and Referral,md,,- TB is reportable to public health — *see [Forms and Duty to Report](../../7%20Practice/Forms%20and%20Duty%20to%20Report.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Infectious Disease,https://pathwaysbc.ca/specialties/34,,,[Respirology](https://pathwaysbc.ca/specialties/2),"login; specialists and clinics, with referral details","Pathways, Infectious Disease, Respirology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

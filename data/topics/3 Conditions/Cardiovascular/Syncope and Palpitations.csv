@@ -1,0 +1,17 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,AAFP - Efficient Approach to the Evaluation of Syncope,https://www.aafp.org/afp/2021/0900/p305,2021,,,"International source: US review, not Canadian",syncope evaluation,INTL,,
+Key Sources,,,AAFP - Palpitations: Evaluation in the Primary Care Setting,https://www.aafp.org/afp/2017/1215/p784,2017,,,"International source: US review, not Canadian",palpitations,INTL,,
+Key Sources,,,McGill Journal of Medicine - Syncope,https://mjm.mcgill.ca/article/view/1043,2025,,,Canadian student-written approach article,syncope,CA,,
+Assessment Tools and Calculators,,,,,,,,Canadian rule for 30-day risk after ED syncope,risk score,INTL,,cdr-syncope
+Assessment Tools and Calculators,,,,,,,,when to order Holter and other monitors,Holter,BC,,bc-gpac-ambulatory-ecg-2013
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Abnormal rhythm (1),https://blackbook.ucalgary.ca/schemes/cardiovascular/abnormal-rhythm-1/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Abnormal rhythm (2),https://blackbook.ucalgary.ca/schemes/cardiovascular/abnormal-rhythm-2/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Dizziness: dizziness,https://blackbook.ucalgary.ca/schemes/neurologic/dizziness-dizziness/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Syncope,https://blackbook.ucalgary.ca/schemes/cardiovascular/syncope/,,,,,syncope,CA,,
+Assessment Tools and Calculators,md,,- Atrial fibrillation — *see [Atrial Fibrillation and Anticoagulation](Atrial%20Fibrillation%20and%20Anticoagulation.md)*,,,,,,,,,
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Cardiology,https://pathwaysbc.ca/specialties/4,,,,"login; specialists and clinics, with referral details","Pathways, Cardiology",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult
+Advice and Referral,,,,,,,,BC duty to report and medical fitness to drive,driving,BC,yes,roadsafetybc-medical-prof
+Advice and Referral,,,,,,,,Ontario mandatory reporting,driving,ON,yes,ontario-driver-medical-review

@@ -1,0 +1,18 @@
+heading,kind,level,title,url,year,pdf,links,note,keywords,region,only,source
+Key Sources,,,AAFP - Knee Pain in Adults and Adolescents: The Initial Evaluation,,,,,"International source: US review, not Canadian",evaluation,INTL,,aafp-knee-pain-2018
+Key Sources,,,Alberta's Pathway Hub - Knee,https://www.primarycarealberta.ca/pathways/35/clinical,2026,,,Primary Care Alberta pathway,knee pathway,AB,,
+Further Resources,,,PedsCases - Patellofemoral Pain Syndrome,https://www.pedscases.com/patellofemoral-pain-syndrome,2024,,,Canadian pediatric approach,patellofemoral adolescents,CA,,
+Further Resources,,,CMAJ - Five things to know about intra-articular glucocorticoid injections for knee osteoarthritis,,,,,Canadian,injection steroid,CA,,cmaj-5t-intra-articular-glucocorticoid-injections-for-knee-2026
+Further Resources,,,CMAJ - Five things to know about periprosthetic hip and knee infections,,,,,Canadian,knee replacement infection,CA,,cmaj-5t-periprosthetic-hip-and-knee-infections-2026
+Assessment Tools and Calculators,,,,,,,,when to X-ray an acute knee injury,Ottawa knee rule,INTL,,cdr-ottawa-knee
+Assessment Tools and Calculators,,,,,,,,Canadian exam guide,exam,CA,,rheuminfo-knee-exam
+Assessment Tools and Calculators,,,BC Guidelines - Appropriate Imaging: Hip and Knee Pain,https://www2.gov.bc.ca/gov/content/health/practitioner-professional-resources/bc-guidelines/appropriate-imaging#hipandkneepain,2019,,,BC imaging advice,imaging MRI,BC,,
+Assessment Tools and Calculators,box,,University of Calgary Blackbook - diagnostic schemes,https://blackbook.ucalgary.ca/schemes/,,,,"diagnostic schemes from the University of Calgary Blackbook, by its medical students and faculty; educational, not for making medical decisions",Blackbook diagnostic scheme differential,CA,,
+Assessment Tools and Calculators,,1,Acute joint pain - vitamin CD,https://blackbook.ucalgary.ca/schemes/musculoskeletal/acute-joint-pain-vitamin-cd/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Infectious joint pain,https://blackbook.ucalgary.ca/schemes/musculoskeletal/infectious-joint-pain/,,,,,,CA,,
+Assessment Tools and Calculators,,1,Chronic joint pain,https://blackbook.ucalgary.ca/schemes/musculoskeletal/chronic-joint-pain/,,,,,,CA,,
+Assessment Tools and Calculators,md,,- Knee osteoarthritis — *see [Osteoarthritis (OA)](Osteoarthritis%20%28OA%29.md)*,,,,,,,,,
+Prescribing,,,,,,,,International source,arthrocentesis injection,INTL,,merck-knee-arthrocentesis
+Advice and Referral,,,,,,,,"telephone and app advice from BC specialists for family physicians, nurse practitioners and midwives",,BC,yes,race-connect
+Advice and Referral,,,Pathways BC - Orthopedics,https://pathwaysbc.ca/specialties/1,,,[Sports Medicine](https://pathwaysbc.ca/specialties/32),"login; specialists and clinics, with referral details","Pathways, Orthopedics, Sports Medicine",BC,yes,pathways-bc
+Advice and Referral,,,,,,,,"specialist advice for Ontario physicians and nurse practitioners, usually without a patient referral",eConsult Ontario,ON,yes,ontario-econsult

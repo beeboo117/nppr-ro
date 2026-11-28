@@ -10,6 +10,9 @@ import { buildPrescribingBySystem } from './prescribing';
 
 export const CONTENT_ROOT = resolve(process.env.NPPR_CONTENT || 'content');
 export const DOCS = join(CONTENT_ROOT, 'docs');
+// Topic pages written for this site, laid out like docs/ (e.g. data/topics/3 Conditions/Neurology/Epilepsy.md).
+// An upstream page at the same path wins, so a topic NPPR.ca adds later replaces ours.
+export const LOCAL_DOCS = resolve('data/topics');
 const BASE = (import.meta.env?.BASE_URL ?? '/').replace(/\/?$/, '/');
 
 export interface SourceRow {
@@ -56,6 +59,7 @@ export interface Page {
   parent?: Page;
   rows: SheetRow[];      // every list-sheet row, rendered
   generated?: boolean;   // built by this site, not an upstream page
+  local?: boolean;       // topic page kept in this repo (data/topics), not upstream
   short?: string;        // shorter title for menus and cards
   researchTerm?: string; // research sidebar query, when the title isn't a good one
   featured?: Page;       // index page whose children are shown as a featured grid
@@ -384,14 +388,25 @@ function idFor(rel: string): string {
 
 export function loadSite() {
   if (cache) return cache;
-  const files = walk(DOCS).map(f => relative(DOCS, f).split('\\').join('/'));
+  // rel path -> folder it lives in (upstream docs/ or this repo's data/topics/).
+  const rootOf = new Map<string, string>();
+  for (const f of walk(DOCS)) rootOf.set(relative(DOCS, f).split('\\').join('/'), DOCS);
+  const upstreamIds = new Set([...rootOf.keys()].map(idFor));
+  if (existsSync(LOCAL_DOCS)) for (const f of walk(LOCAL_DOCS)) {
+    const rel = relative(LOCAL_DOCS, f).split('\\').join('/');
+    if (rootOf.has(rel) || upstreamIds.has(idFor(rel))) { console.warn(`[topics] upstream now has ${rel}; using the upstream page`); continue; }
+    if (!existsSync(join(DOCS, dirname(rel)))) { console.warn(`[topics] no upstream folder for ${rel}; skipped`); continue; }
+    rootOf.set(rel, LOCAL_DOCS);
+  }
+  const files = [...rootOf.keys()];
   const linkMap = new Map<string, string>();
   for (const rel of files) { const id = idFor(rel); linkMap.set(rel, BASE + (id ? id + '/' : '')); }
 
   const pages: Page[] = [];
   for (const rel of files) {
     if (rel === 'index.md') continue; // our own dashboard replaces the home page
-    const src = readFileSync(join(DOCS, rel), 'utf8');
+    const root = rootOf.get(rel)!;
+    const src = readFileSync(join(root, rel), 'utf8');
     const { data, body } = splitFrontmatter(src);
     if (data.status === 'draft') continue;
     const id = idFor(rel);
@@ -405,7 +420,7 @@ export function loadSite() {
     let text = preprocessMarkdown(body);
     const sheets: string[] = [];
     text = text.replace(/<!--\s*nppr-list:\s*(.+?\.csv)([^>]*?)-->/g, (_m, csv, optStr) => {
-      const res = renderSheet(join(DOCS, dirname(rel), csv.trim()), md, { counts: /counts/.test(optStr), dash: /notes=dash/.test(optStr), style: (optStr.match(/style=(\w+)/) || [])[1] });
+      const res = renderSheet(join(root, dirname(rel), csv.trim()), md, { counts: /counts/.test(optStr), dash: /notes=dash/.test(optStr), style: (optStr.match(/style=(\w+)/) || [])[1] });
       headings.push(...res.headings); entries.push(...res.entries); rows.push(...res.rows);
       sheets.push(res.html);
       return `\n\n<!--SHEET${sheets.length - 1}-->\n\n`;
@@ -435,7 +450,7 @@ export function loadSite() {
       region: data.region === true ? 'ON' : String(data.region || ''),
       lastReviewed: String(data['last-reviewed'] || ''), reviewDue: String(data['review-due'] || ''),
       status: String(data.status || ''), icon: iconFor(data['card-icon'], ''), logo: data.logo ? rewriteHref(String(data.logo), rel, linkMap) : '',
-      intro, html, headings, entries, children: [], rows,
+      intro, html, headings, entries, children: [], rows, local: root === LOCAL_DOCS,
     });
   }
 
